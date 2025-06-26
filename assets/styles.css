@@ -1,6 +1,7 @@
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -713,12 +714,12 @@ textarea {
 
   /* Real estate section */
   .real-estate-section .subtitle {
-    font-size: 40px;
+    font-size: 4rem;
     margin-bottom: -10px;
   }
 
   .real-estate-section .title {
-    font-size: 2rem;
+    font-size: 4rem;
     margin-bottom: 20px;
   }
 
@@ -766,10 +767,20 @@ textarea {
     padding: 0 10px;
   }
 
-  .title {
-    font-size: 5px;
+}
+
+@media (max-width: 425px) {
+
+  /* Real estate section */
+  .real-estate-section .subtitle {
+    font-size: 3rem;
+  }
+
+  .real-estate-section .title {
+    font-size: 3rem;
   }
 }
+
 
 @media (max-width: 375px) {
   .qwitcher-grypen-bold {
@@ -778,5 +789,13 @@ textarea {
 
   .hero-main {
     font-size: 40px;
+  }
+
+  .real-estate-section .subtitle {
+    font-size: 2.5rem;
+  }
+
+  .real-estate-section .title {
+    font-size: 2.5rem;
   }
 }

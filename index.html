@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-  <title>Dominican Nothirix</title>
+  <title>Dominican Nothirix - Inversiones Inmobiliarias en RD</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
     </div>
 
     <!-- Botón hamburguesa -->
-    <div class="hamburger" onclick="toggleMenu()">
+    <div class="hamburger" onclick="toggleMenu()" role="button" aria-label="Menú de navegación">
       <span></span>
       <span></span>
       <span></span>
@@ -30,16 +30,17 @@
 
     <!-- Navegación con ID para JS -->
     <nav class="nav-links" id="nav-menu">
-      <a href="#">Inicio</a>
-      <a href="#">Propiedades</a>
-      <a href="#">Contacto</a>
+      <a href="#hero">Inicio</a>
+      <a href="#team-section">Equipo</a>
+      <a href="#real-estate-section">Propiedades</a>
+      <a href="#site-footer">Contacto</a>
     </nav>
   </header>
   <!--Navbar-->
 
 
   <!--Hero-->
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="hero-content">
       <img class="logo-container" src="./assets/img/logo.png" alt="Dominican Nothirix logo">
       <h1><span class="qwitcher-grypen-bold inline-text">La elegancia</span> <span class="hero-main inline-text">de
@@ -61,7 +62,7 @@
   <!--Hero-->
 
   <!--form-->
-  <div class="form-container">
+  <section class="form-container">
     <div class="left">
       <h2>EXPERIENCIA SIN IGUAL</h2>
       <p>
@@ -72,18 +73,18 @@
     </div>
     <div class="right">
       <form>
-        <input type="text" placeholder="Nombre" required />
-        <input type="text" placeholder="Apellido" required />
-        <input type="text" placeholder="Interés" required />
-        <textarea placeholder="Mensaje" required></textarea>
+        <input type="text" placeholder="Nombre" aria-label="Nombre" required />
+        <input type="text" placeholder="Apellido" aria-label="Apellido" required />
+        <input type="text" placeholder="Interés" aria-label="Interés" required />
+        <textarea placeholder="Mensaje" aria-label="Mensaje" required></textarea>
         <button class="form-btn" type="submit">Enviar</button>
         <p class="privacy-note">
-          this site is protected by reCAPTCHA and the Google
+          This site is protected by reCAPTCHA and the Google
           <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.
         </p>
       </form>
     </div>
-  </div>
+  </section>
   <!--form-->
 
   <!-- Section separator -->
@@ -97,7 +98,7 @@
   <!-- Section separator -->
 
   <!--Our Team-->
-  <section class="team-section">
+  <section class="team-section" id="team-section">
     <h2 class="team-title">NUESTRO EQUIPO</h2>
     <p class="team-subtitle">Un Equipo De Expertos Comprometidos Con Tu Camino Hacia El Hogar Ideal.</p>
 
@@ -111,11 +112,14 @@
           con cada cliente.
         </p>
 
-        <p class="employee-title">Fundador / Ventas</p>
+        <p class="employee-title">CEO / Ventas</p>
         <div class="social-icons">
-          <a href="https://facebook.com" target="_blank" rel="noopener"><i data-lucide="facebook"></i></a>
-          <a href="https://twitter.com" target="_blank" rel="noopener"><i data-lucide="twitter"></i></a>
-          <a href="https://instagram.com" target="_blank" rel="noopener"><i data-lucide="instagram"></i></a>
+          <a href="https://www.facebook.com/jewryjosue?locale=es_LA" target="_blank" rel="noopener"
+            aria-label="Facebook de Josué Pérez"><i data-lucide="facebook"></i></a>
+          <!--  <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter de Josué Pérez"><i
+              data-lucide="twitter"></i></a> -->
+          <a href="https://www.instagram.com/josueperez_25/" target="_blank" rel="noopener"
+            aria-label="Instagram de Josué Pérez"><i data-lucide="instagram"></i></a>
         </div>
 
       </div>
@@ -129,11 +133,14 @@
           centradas en el usuario.
         </p>
 
-        <p class="employee-title">Desarrollador</p>
+        <p class="employee-title">CEO / Desarrollador</p>
         <div class="social-icons">
-          <a href="https://facebook.com" target="_blank" rel="noopener"><i data-lucide="facebook"></i></a>
-          <a href="https://twitter.com" target="_blank" rel="noopener"><i data-lucide="twitter"></i></a>
-          <a href="https://instagram.com" target="_blank" rel="noopener"><i data-lucide="instagram"></i></a>
+          <a href="https://www.facebook.com/miguel.urena.745495?locale=es_LA" target="_blank" rel="noopener"
+            aria-label="Facebook de Miguel Ureña"><i data-lucide="facebook"></i></a>
+          <!-- <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter de Miguel Ureña"><i
+              data-lucide="twitter"></i></a>-->
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram de Miguel Ureña"><i
+              data-lucide="instagram"></i></a>
         </div>
 
       </div>
@@ -142,7 +149,7 @@
   <!--Our Team-->
 
   <!--Advantages-->
-  <section class="advantages real-estate-section">
+  <section class="advantages real-estate-section" id="real-estate-section">
 
     <div class="text-block">
       <p class="subtitle">Tu inversión es</p>
@@ -199,22 +206,22 @@
   <!--Advantages-->
 
   <!--Footer-->
-  <footer class="site-footer">
+  <footer class="site-footer" id="site-footer">
     <div class="footer-container">
       <div class="footer-logo">
         <img src="./assets/img/logo.png" alt="Dominican Nothirix Logo">
         <p class="slogan">Invierte con inteligencia y estilo.</p>
       </div>
-
-
       <div class="footer-contact">
         <h4>Contacto</h4>
         <p>nothirix@gmail.com</p>
         <p>+1 (809) 490-7813</p>
         <div class="footer-social">
-          <a href="#"><i data-lucide="facebook"></i></a>
-          <a href="#"><i data-lucide="twitter"></i></a>
-          <a href="#"><i data-lucide="instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61573222080586&locale=es_LA" target="_blank" rel="noopener"
+            aria-label="Facebook de Nothirix"><i data-lucide="facebook"></i></a>
+          <!-- <a href="#"><i data-lucide="twitter"></i></a>-->
+          <a href="https://www.instagram.com/nothirix/" target="_blank" rel="noopener"
+            aria-label="Facebook de Nothirix"><i data-lucide="instagram"></i></a>
         </div>
       </div>
     </div>
