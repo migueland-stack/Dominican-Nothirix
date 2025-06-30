@@ -5,11 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Propiedades | Dominican Nothirix</title>
-  <link rel="stylesheet" href="/assets/styles.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
-  <link rel="manifest" href="/assets/img/site.webmanifest">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
+  <link rel="manifest" href="../assets/img/site.webmanifest">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
   <!--Navbar-->
   <header class="navbar">
     <div class="logo">
-      <img src="/assets/img/logo.png" alt="Dominican Nothirix logo">
+      <img src="../assets/img/logo.png" alt="Dominican Nothirix logo">
     </div>
 
     <!-- Botón hamburguesa -->
@@ -29,10 +29,10 @@
 
     <!-- Navegación con ID para JS -->
     <nav class="nav-links" id="nav-menu">
-      <a href="/index.html">Inicio</a>
-      <a href="/index.html/#team-section">Equipo</a>
-      <a href="./propiedades/index.html">Propiedades</a>
-      <a href="#site-footer">Contacto</a>
+      <a href="../index.html">Inicio</a>
+      <a href="../index.html/#team-section">Equipo</a>
+      <a href="../propiedades/index.html">Propiedades</a>
+      <a href="">Contacto</a>
     </nav>
   </header>
   <!--Navbar-->
@@ -113,7 +113,7 @@
           <option value="3">5+</option>
         </select>
 
-        <label>Precio (RD$):</label>
+        <label>Precio (US$):</label>
         <div class="rango-precio">
           <input type="number" id="precioMinModal" placeholder="Mínimo">
           <input type="number" id="precioMaxModal" placeholder="Máximo">
@@ -128,8 +128,34 @@
   <!--Properties Section-->
   <section id="properties-container" class="properties-grid"></section>
   <!--Properties Section-->
+  <!--Footer-->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="../assets/img/logo.png" alt="Dominican Nothirix Logo">
+        <p class="slogan">Invierte con inteligencia y estilo.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <p>nothirix@gmail.com</p>
+        <p>+1 (809) 490-7813</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=61573222080586&locale=es_LA" target="_blank" rel="noopener"
+            aria-label="Facebook de Nothirix"><i data-lucide="facebook"></i></a>
+          <!-- <a href="#"><i data-lucide="twitter"></i></a>-->
+          <a href="https://www.instagram.com/nothirix/" target="_blank" rel="noopener"
+            aria-label="Facebook de Nothirix"><i data-lucide="instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Dominican Nothirix. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <!--Footer-->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="/assets/script.js"></script>
+  <script src="../assets/script.js"></script>
 </body>
 
 </html>
