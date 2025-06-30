@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Propiedades | Dominican Nothirix</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+  <link rel="manifest" href="/assets/img/site.webmanifest">
+</head>
+
+<body>
+
+  <!--Navbar-->
+  <header class="navbar">
+    <div class="logo">
+      <img src="/assets/img/logo.png" alt="Dominican Nothirix logo">
+    </div>
+
+    <!-- Botón hamburguesa -->
+    <div class="hamburger" onclick="toggleMenu()" role="button" aria-label="Menú de navegación">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Navegación con ID para JS -->
+    <nav class="nav-links" id="nav-menu">
+      <a href="/index.html">Inicio</a>
+      <a href="/index.html/#team-section">Equipo</a>
+      <a href="./propiedades/index.html">Propiedades</a>
+      <a href="#site-footer">Contacto</a>
+    </nav>
+  </header>
+  <!--Navbar-->
+
+  <!--Filter Section-->
+  <section class="filter-section">
+    <h2 class="prop-title">Compra una propiedad</h2>
+    <p class="found-props">0 Propiedades encontradas.</p>
+
+    <!-- Modal de Filtros para Bienes Raíces -->
+    <button id="abrirModalFiltros" class="filter-btn">¡Encuentra e Invierte!</button>
+
+    <div id="modalFiltros" class="modal-filtros oculto">
+      <div class="modal-filtros-contenido">
+        <button id="cerrarModalFiltros" class="cerrar-btn">✕</button>
+        <h2>Filtrar propiedades</h2>
+
+        <label for="ciudadModal">Ciudad:</label>
+        <select id="ciudadModal">
+          <option value="">Todas</option>
+          <option value="Azua">Azua</option>
+          <option value="Baní">Baní</option>
+          <option value="Barahona">Barahona</option>
+          <option value="Bávaro">Bávaro</option>
+          <option value="Bonao">Bonao</option>
+          <option value="Cotuí">Cotuí</option>
+          <option value="Higüey">Higüey</option>
+          <option value="Hato Mayor">Hato Mayor</option>
+          <option value="Jarabacoa">Jarabacoa</option>
+          <option value="La Romana">La Romana</option>
+          <option value="La Vega">La Vega</option>
+          <option value="Mao">Mao</option>
+          <option value="Moca">Moca</option>
+          <option value="Montecristi">Montecristi</option>
+          <option value="Nagua">Nagua</option>
+          <option value="Pedernales">Pedernales</option>
+          <option value="Puerto Plata">Puerto Plata</option>
+          <option value="Punta Cana">Punta Cana</option>
+          <option value="Samaná">Samaná</option>
+          <option value="San Cristóbal">San Cristóbal</option>
+          <option value="San Francisco de Macorís">San Francisco de Macorís</option>
+          <option value="San Juan de la Maguana">San Juan de la Maguana</option>
+          <option value="San Pedro de Macorís">San Pedro de Macorís</option>
+          <option value="Santiago">Santiago</option>
+          <option value="Santo Domingo">Santo Domingo</option>
+          <option value="Sosúa">Sosúa</option>
+          <option value="Verón">Verón</option>
+
+        </select>
+
+        <label for="habitacionesModal">Habitaciones:</label>
+        <select id="habitacionesModal">
+          <option value="">Todas</option>
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="3">4+</option>
+          <option value="3">5+</option>
+        </select>
+
+        <label for="banosModal">Baños:</label>
+        <select id="banosModal">
+          <option value="">Todos</option>
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="3">4+</option>
+          <option value="3">5+</option>
+        </select>
+
+        <label for="parqueosModal">Parqueos:</label>
+        <select id="parqueosModal">
+          <option value="">Todos</option>
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="3">4+</option>
+          <option value="3">5+</option>
+        </select>
+
+        <label>Precio (RD$):</label>
+        <div class="rango-precio">
+          <input type="number" id="precioMinModal" placeholder="Mínimo">
+          <input type="number" id="precioMaxModal" placeholder="Máximo">
+        </div>
+
+        <button id="aplicarFiltrosModal" class="filter-btn">Aplicar Filtros</button>
+      </div>
+    </div>
+  </section>
+  <!--Filter Section-->
+
+  <!--Properties Section-->
+  <section id="properties-container" class="properties-grid"></section>
+  <!--Properties Section-->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="/assets/script.js"></script>
+</body>
+
+</html>

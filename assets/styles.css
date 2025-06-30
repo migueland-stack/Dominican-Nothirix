@@ -9,6 +9,25 @@ html {
   box-sizing: inherit;
 }
 
+:root {
+  --primary-yellow: #ffde59;
+  --primary-dark: #0f2f2d;
+  --primary-teal: #004944;
+  --primary-teal-hover: #006e67;
+  --light-gray: #ececec;
+  --dark-gray: #161616;
+  --mid-gray: #444;
+  --mid-gray-2: #333;
+  --light-gray-2: #ccc;
+  --light-gray-3: #ddd;
+  --light-background: #f7f7f7;
+  --secondary-text: #2f4f4f;
+  --accent-blue: #1776d1;
+  --hover-background: #134240;
+  --accent-white: white;
+}
+
+
 .qwitcher-grypen-bold {
   font-family: "Qwitcher Grypen", cursive;
   font-weight: 400;
@@ -17,7 +36,7 @@ html {
   margin-left: auto;
   margin-bottom: -70px;
   font-size: 110px;
-  color: #ffde59;
+  color: var(--primary-yellow);
   z-index: 1;
   position: relative;
 }
@@ -33,12 +52,13 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #0f2f2d;
+  background-color: var(--primary-dark);
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 60px;
   z-index: 999;
+  margin-bottom: 40px;
 }
 
 /* Hamburger Icon hidden on desktop */
@@ -54,7 +74,7 @@ body {
 .hamburger span {
   display: block;
   height: 3px;
-  background-color: white;
+  background-color: var(--accent-white);
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -62,7 +82,7 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  color: white;
+  color: var(--accent-white);
 }
 
 .logo img {
@@ -72,7 +92,7 @@ body {
 
 .nav-links a {
   font-size: 16px;
-  color: white;
+  color: var(--accent-white);
   text-decoration: none;
   margin-left: 30px;
   margin-right: 15px;
@@ -123,7 +143,7 @@ body {
   height: 45px;
   text-transform: uppercase;
   background-color: transparent;
-  color: #fff;
+  color: var(--accent-white);
   border: none;
   cursor: pointer;
   font-weight: 100;
@@ -142,7 +162,7 @@ body {
 
 .contact-btn rect {
   fill: none;
-  stroke: #fff;
+  stroke: var(--accent-white);
   stroke-width: 2;
   stroke-dasharray: 422, 0;
   transition: all 0.35s linear;
@@ -167,7 +187,7 @@ body {
   height: 45px;
   text-transform: uppercase;
   background-color: #004944;
-  color: #ececee;
+  color: var(--light-gray);
   border: none;
   cursor: pointer;
   z-index: 1;
@@ -200,7 +220,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #ececee;
+  color: var(--light-gray);
 }
 
 .form-container {
@@ -253,7 +273,7 @@ input,
 textarea {
   padding: 12px 16px;
   border: none;
-  background-color: #f6f7f7;
+  background-color: var(--light-background);
   font-size: 16px;
   border-radius: 4px;
   resize: none;
@@ -265,7 +285,7 @@ textarea {
 
 .form-btn {
   background-color: #0c2d2c;
-  color: white;
+  color: var(--accent-white);
   border: none;
   padding: 12px 20px;
   font-size: 16px;
@@ -306,7 +326,7 @@ textarea {
 }
 
 .privacy-note a {
-  color: #1776d1;
+  color: var(--accent-blue);
   text-decoration: none;
 }
 
@@ -324,7 +344,7 @@ textarea {
 
 .team-section {
   background-color: #f7f7f7;
-  color: #161616;
+  color: var(--dark-gray);
   padding: 50px 100px;
   text-align: center;
 }
@@ -340,7 +360,7 @@ textarea {
   font-weight: 500;
   letter-spacing: 1px;
   margin-bottom: 40px;
-  color: #161616;
+  color: var(--dark-gray);
 }
 
 .team-grid {
@@ -351,7 +371,7 @@ textarea {
 }
 
 .employee-container {
-  background-color: white;
+  background-color: var(--accent-white);
   max-width: 250px;
   padding: 25px 15px;
   border-radius: 15px;
@@ -378,7 +398,7 @@ textarea {
 .about-employee {
   font-size: 14px;
   line-height: 1.5;
-  color: #444;
+  color: var(--mid-gray);
   margin: 10px 0;
 }
 
@@ -386,7 +406,7 @@ textarea {
   font-weight: bold;
   font-size: 15px;
   margin-top: 10px;
-  color: #333;
+  color: var(--mid-gray-2);
 }
 
 .social-icons {
@@ -399,7 +419,7 @@ textarea {
 .social-icons i {
   width: 20px;
   height: 20px;
-  color: #161616;
+  color: var(--dark-gray);
   cursor: pointer;
   transition: color 0.3s ease;
 }
@@ -424,7 +444,7 @@ textarea {
   padding: 0 20px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  color: #161616;
+  color: var(--dark-gray);
 }
 
 .cards-container {
@@ -444,7 +464,7 @@ textarea {
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   flex: 0 0 auto;
 }
 
@@ -471,7 +491,7 @@ textarea {
 }
 
 .slide.slide2 {
-  background-color: white;
+  background-color: var(--accent-white);
   padding: 20px;
   box-sizing: border-box;
   color: #004944;
@@ -501,7 +521,7 @@ textarea {
   margin: 0;
   font-size: 14px;
   line-height: 1.4;
-  color: #2f4f4f;
+  color: var(--secondary-text);
 }
 
 .subtitle {
@@ -524,8 +544,8 @@ textarea {
 .subtitle2 {
   font-size: 16px;
   margin-top: 4px;
-  color: #444;
-  font-family: 'Roboto', sans-serif;
+  color: var(--mid-gray);
+  font-family: 'Segoe UI', sans-serif, sans-serif;
 }
 
 .description {
@@ -533,14 +553,14 @@ textarea {
   margin: 20px auto 40px auto;
   font-size: 16px;
   line-height: 1.6;
-  color: #444;
-  font-family: 'Roboto', sans-serif;
+  color: var(--mid-gray);
+  font-family: 'Segoe UI', sans-serif, sans-serif;
 }
 
 
 .site-footer {
   background-color: #0f2f2d;
-  color: #ececee;
+  color: var(--light-gray);
   padding: 60px 40px 20px;
   font-family: 'Montserrat', sans-serif;
 }
@@ -562,7 +582,7 @@ textarea {
 .slogan {
   font-style: italic;
   font-size: 14px;
-  color: #ccc;
+  color: var(--light-gray-3);
   margin-top: 5px;
 }
 
@@ -580,7 +600,7 @@ textarea {
 
 .footer-links a {
   display: block;
-  color: #ececee;
+  color: var(--light-gray);
   text-decoration: none;
   margin-bottom: 8px;
   font-size: 14px;
@@ -603,7 +623,7 @@ textarea {
 }
 
 .footer-social a {
-  color: #ececee;
+  color: var(--light-gray);
   font-size: 20px;
   transition: color 0.3s ease;
 }
@@ -621,6 +641,167 @@ textarea {
   margin-top: 30px;
 }
 
+
+/*------------------Properties CSS ---------------------*/
+
+.filter-section {
+  margin-top: 20px;
+  padding: 40px;
+}
+
+.filter-btn {
+  background-color: #004944;
+  color: var(--accent-white);
+  font-weight: bold;
+  padding: 8px 6px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all, 0.3s;
+}
+
+.filter-btn:hover {
+  background-color: #006e67;
+}
+
+.prop-title {
+  color: var(--dark-gray);
+}
+
+.found-props {
+  margin-top: -15px;
+  color: #004944;
+}
+
+.modal-filtros {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.modal-filtros.oculto {
+  display: none;
+}
+
+.modal-filtros-contenido {
+  background: var(--accent-white);
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modal-filtros-contenido h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.modal-filtros-contenido label {
+  font-weight: bold;
+}
+
+.modal-filtros-contenido select,
+.modal-filtros-contenido input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--light-gray-3);
+  border-radius: 4px;
+}
+
+.rango-precio {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cerrar-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 1rem 1rem;
+  justify-content: center;
+}
+
+.property-card {
+  border: 1px solid var(--light-gray-2);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s;
+  height: 100%;
+  max-width: 450px;
+}
+
+.property-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.property-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.property-content {
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.property-location {
+  font-weight: 600;
+  color: var(--primary-teal);
+  font-size: 1rem;
+}
+
+.property-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0.25rem 0;
+  flex-grow: 1;
+}
+
+.property-price {
+  color: #2a7c2e;
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.property-details {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #555;
+  flex-wrap: wrap;
+}
+
 /*-------------Media Queries-----------*/
 
 /* ≤600px */
@@ -634,9 +815,7 @@ textarea {
   textarea {
     font-size: 14px;
   }
-
 }
-
 
 /* ≤768px */
 @media (max-width: 768px) {
@@ -738,6 +917,11 @@ textarea {
   .employee-container {
     min-width: 225px;
   }
+
+  .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
 }
 
 /* ≤900px */
@@ -777,6 +961,10 @@ textarea {
 
   .real-estate-section .title {
     font-size: 3rem;
+  }
+
+  .properties-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
