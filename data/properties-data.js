@@ -1,0 +1,98 @@
+const properties = [
+  {
+    id: 1,
+    location: "La Esmeralda",
+    title: "Apartamento con Impresionantes Vistas a la Montaña",
+    price: "US$252,000",
+    beds: 1,
+    baths: 1.5,
+    parking: 1,
+    size: "105 M²",
+    image:
+      "https://media.equityapartments.com/images/c_crop,x_0,y_0,w_1920,h_1080/c_fill,w_1920,h_1080/q_auto,f_auto/4295-228/lyle-apartments-exterior",
+  },
+  {
+    id: 2,
+    location: "Piantini",
+    title: "Local en Venta en Plaza de Piantini",
+    price: "US$275,000",
+    beds: 1,
+    baths: 1,
+    parking: 2,
+    size: "127 M²",
+    image:
+      "https://galmangroup.com/wp-content/uploads/2021/12/whitney-apartments-featured-image.jpg",
+  },
+  {
+    id: 3,
+    location: "Naco",
+    title: "Apartamento Moderno con Piscina y Gimnasio",
+    price: "US$310,000",
+    beds: 3,
+    baths: 2,
+    parking: 2,
+    size: "150 M²",
+    image:
+      "https://media.equityapartments.com/images/c_crop,x_0,y_0,w_2048,h_1152/c_fill,w_2048,h_1152/q_auto,f_auto/4304-23/the-encore-apartments-pool",
+  },
+  {
+    id: 4,
+    location: "Bella Vista",
+    title: "Penthouse de Lujo con Terraza Privada",
+    price: "US$450,000",
+    beds: 4,
+    baths: 3.5,
+    parking: 3,
+    size: "220 M²",
+    image:
+      "https://jscoabode.com/wp-content/uploads/2021/02/NE-Street-View-2048x1344.jpg",
+  },
+  {
+    id: 5,
+    location: "Gazcue",
+    title: "Condominio Moderno con Vista al Mar",
+    price: "US$320,000",
+    beds: 2,
+    baths: 2,
+    parking: 2,
+    size: "140 M²",
+    image:
+      "https://www.sgl.do/upload/olimare/properties/35464c848f410e55a13bb9d78e7fddd0/apartment-cibao-santiago-gurabo-19894_full.jpg",
+  },
+  {
+    id: 6,
+    location: "Santo Domingo Este",
+    title: "Casa Familiar con Jardín Amplio",
+    price: "US$285,000",
+    beds: 3,
+    baths: 2,
+    parking: 3,
+    size: "180 M²",
+    image:
+      "https://assets.easybroker.com/property_images/4414362/74860048/EB-PY4362.jpg?height=300&version=1715219660&width=450",
+  },
+  {
+    id: 7,
+    location: "Mirador Sur",
+    title: "Apartamento de Lujo con Amenidades Exclusivas",
+    price: "US$400,000",
+    beds: 3,
+    baths: 3,
+    parking: 2,
+    size: "160 M²",
+    image:
+      "https://www.sgl.do/upload/olimare/properties/e6e713296627dff6475085cc6a224464/properties-3565-58940.jpeg",
+  },
+  {
+    id: 8,
+    location: "Los Prados",
+    title: "Penthouse Espacioso con Terraza y Vista Panorámica",
+    price: "US$480,000",
+    beds: 4,
+    baths: 4,
+    parking: 4,
+    size: "250 M²",
+    image:
+      "https://www.bienesonline.com/republica-dominicana/photos/vendo-apartamento-en-valle-verde-APV174241639433259-150.jpg",
+  },
+];

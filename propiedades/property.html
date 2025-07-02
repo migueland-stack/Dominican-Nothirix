@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nothirix Dominicana | Propiedad</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+  <section class="prop-section">
+    <div id="prop-info">
+      <h1 id="prop-title">Cargando...</h1>
+      <p id="prop-location"></p>
+      <p id="prop-price"></p>
+      <p id="prop-description"></p>
+    </div>
+
+    <main class=".main-prop">
+      <button class="carousel-arrow carousel-arrow--prev" onclick="handleCarouselMove(false)">&#8249;</button>
+      <button class="carousel-arrow carousel-arrow--next" onclick="handleCarouselMove(true)">&#8250;</button>
+      <div class="carousel-container" id="carousel-container"></div>
+    </main>
+
+    <div class="back-link">
+      <a href="../propiedades/index.html">← Volver a propiedades</a>
+    </div>
+  </section>
+  <script src="../data/properties-data.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const propId = Number(urlParams.get("prop"));
+      const property = properties.find(prop => prop.id === propId);
+
+      if (!property) {
+        document.body.innerHTML = "<h1>Propiedad no encontrada</h1><div class='back-link'><a href='/propiedades/index.html'>← Volver a propiedades</a></div>";
+        return;
+      }
+
+      // Actualizar título del documento
+      document.title = property.title + " | Dominican Nothirix";
+
+      // Poblar información
+      document.getElementById("prop-title").textContent = property.title;
+      document.getElementById("prop-location").textContent = `Ubicación: ${property.location}`;
+      document.getElementById("prop-price").textContent = `Precio: ${property.price}`;
+      document.getElementById("prop-description").textContent = `Tamaño: ${property.size} | ${property.beds} habitaciones | ${property.baths} baños | ${property.parking} parqueos`;
+
+      // Carrusel
+      const carouselContainer = document.getElementById("carousel-container");
+      const images = property.images && property.images.length > 0 ? property.images : [property.image];
+      images.forEach(imgUrl => {
+        const slide = document.createElement("div");
+        slide.className = "carousel-slide";
+        slide.innerHTML = `<img src="${imgUrl}" alt="Imagen de ${property.title}" loading="lazy">`;
+        carouselContainer.appendChild(slide);
+      });
+    });
+
+    function handleCarouselMove(next = true) {
+      const carousel = document.getElementById("carousel-container");
+      const slide = document.querySelector(".carousel-slide");
+      if (!slide) return;
+      const slideWidth = slide.clientWidth + 8; // 8px gap
+      carousel.scrollLeft += next ? slideWidth : -slideWidth;
+    }
+  </script>
+</body>
+
+</html>

@@ -643,7 +643,7 @@ textarea {
 }
 
 
-/*------------------Properties CSS ---------------------*/
+/*------------------All Properties CSS ---------------------*/
 
 .filter-section {
   margin-top: 20px;
@@ -737,12 +737,12 @@ textarea {
 }
 
 .properties-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   margin: 0;
-  padding: 1rem 1rem;
-  justify-content: center;
+  padding: 1rem;
   margin-bottom: 60px;
 }
 
@@ -752,13 +752,21 @@ textarea {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.3s;
+  transition: 0.5s;
   height: 100%;
-  max-width: 450px;
+  width: 100%;
+  max-width: 500px;
+  min-width: 450px;
+  flex: 1 1 450px;
+
+}
+
+.property-link {
+  text-decoration: none;
 }
 
 .property-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .property-image {
@@ -803,6 +811,106 @@ textarea {
   color: #555;
   flex-wrap: wrap;
 }
+
+/*------------------Individual Properties CSS ---------------------*/
+.prop-section img {
+  max-height: 400px;
+  max-width: 600px;
+}
+
+.main-prop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.carousel-arrow {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 48px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  opacity: 0.5;
+  border-radius: 50%;
+  z-index: 10;
+  transition: opacity 150ms;
+}
+
+.carousel-arrow:hover {
+  opacity: 1;
+}
+
+.carousel-arrow--prev {
+  left: 0;
+}
+
+.carousel-arrow--next {
+  right: 0;
+}
+
+.carousel-container {
+  overflow-x: auto;
+  display: flex;
+  gap: 8px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 1rem 3rem;
+  width: 100%;
+}
+
+.carousel-slide {
+  flex: 1 0 30%;
+  aspect-ratio: 16/9;
+  scroll-snap-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .carousel-slide {
+    flex: 1 0 90%;
+  }
+}
+
+#prop-info {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+#prop-info h1 {
+  margin-bottom: 0.5rem;
+}
+
+#prop-info p {
+  margin: 0.25rem 0;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.back-link a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 
 /*-------------Media Queries-----------*/
 
@@ -920,9 +1028,9 @@ textarea {
     min-width: 225px;
   }
 
-  .properties-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  .property-card {
+    min-width: 350px;
+    flex: 1 1 350px;
   }
 }
 
@@ -965,25 +1073,28 @@ textarea {
     font-size: 3rem;
   }
 
-  .properties-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-}
-
-@media (max-width: 375px) {
-  .qwitcher-grypen-bold {
-    font-size: 70px;
+  @media (max-width: 425px) {
+    .property-card {
+      min-width: 280px;
+      flex: 1 1 280px;
+    }
   }
 
-  .hero-main {
-    font-size: 40px;
-  }
+  @media (max-width: 375px) {
+    .qwitcher-grypen-bold {
+      font-size: 70px;
+    }
 
-  .real-estate-section .subtitle {
-    font-size: 2.5rem;
-  }
+    .hero-main {
+      font-size: 40px;
+    }
 
-  .real-estate-section .title {
-    font-size: 2.5rem;
+    .real-estate-section .subtitle {
+      font-size: 2.5rem;
+    }
+
+    .real-estate-section .title {
+      font-size: 2.5rem;
+    }
   }
 }
