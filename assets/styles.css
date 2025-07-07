@@ -590,6 +590,8 @@ textarea {
 .footer-links,
 .footer-contact {
   min-width: 200px;
+  color: var(--light-background);
+  text-decoration: none;
 }
 
 .footer-links h4,
