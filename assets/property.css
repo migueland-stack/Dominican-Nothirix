@@ -1,0 +1,406 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+:root {
+  --primary-yellow: #ffde59;
+  --primary-dark: #0f2f2d;
+  --primary-teal: #004944;
+  --primary-teal-hover: #006e67;
+  --light-gray: #ececec;
+  --dark-gray: #161616;
+  --mid-gray: #444;
+  --mid-gray-2: #333;
+  --light-gray-2: #ccc;
+  --light-gray-3: #ddd;
+  --light-background: #f7f7f7;
+  --secondary-text: #2f4f4f;
+  --accent-blue: #1776d1;
+  --hover-background: #134240;
+  --accent-white: white;
+}
+
+body {
+  margin: 0;
+   font-family: "Nunito Sans", sans-serif;
+}
+
+.navbar {
+  padding: 10px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--primary-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  z-index: 999;
+  margin-bottom: 40px;
+}
+
+/* Hamburger Icon hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 22px;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background-color: var(--accent-white);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: var(--accent-white);
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-links a {
+  font-size: 16px;
+  color: var(--accent-white);
+  text-decoration: none;
+  margin-left: 30px;
+  margin-right: 15px;
+  font-weight: bold;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+
+}
+
+.nav-links a:hover {
+  opacity: 1;
+  color: var(--primary-yellow)
+}
+
+.logo-container {
+  margin-top: 50px;
+  width: 400px;
+  height: 100%;
+}
+
+.back-link {
+  margin-top: 80px;
+  margin-bottom: 15px;
+}
+
+.back-link a {
+  color: var(--dark-gray);
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 0; /* Inicial sin padding */
+}
+
+.back-link a::before {
+  content: "←";
+  position: absolute;
+  left: -20px; /* Posición inicial fuera de vista */
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.back-link a:hover {
+  color: var(--primary-teal-hover);
+  padding-left: 20px; /* Empuja el texto para dar espacio a la flecha */
+}
+
+.back-link a:hover::before {
+  left: 0; /* Mueve la flecha a su posición visible */
+  opacity: 1;
+}
+
+
+.property-container {
+  margin: 80px auto 0 auto;
+  max-width: 800px;
+}
+
+
+.image-layout {
+  display: flex;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 800px;
+  margin: auto;
+}
+
+.main-image {
+  flex: 2;
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.side-images {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.side-images img {
+  width: 100%;
+  height: calc((100% - 1rem) / 3);
+  object-fit: cover;
+  display: block;
+}
+
+.property-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 1rem auto 0 auto;
+  padding: 0 1rem;
+}
+
+.price-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.price-tag {
+  color: #004944;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.property-title {
+  font-size: 16px;
+  margin: 0;
+  max-width: 500px;
+  font-weight: normal;
+}
+
+.features {
+  display: flex;
+  gap: 13px;
+  background-color: #004944;
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+  flex-wrap: wrap;
+}
+
+.property-el {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  color: white;
+}
+
+.property-el img {
+  width: 28px;
+  height: 28px;
+}
+
+.map-section {
+  margin-top: 50px;
+}
+
+.city-name {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #004944;
+}
+
+.map-title {
+  display: flex;
+  gap: 5px;
+}
+
+.map-title h2 {
+  color: #161616;
+}
+
+.desc {
+  text-align: justify;
+}
+
+#map {
+  height: 300px;
+  max-width: 800px;
+  border-radius: 1rem;
+  margin: 1rem auto;
+}
+
+.description-section {
+  margin-top: 50px;
+}
+
+.site-footer {
+  margin-top: 103px;
+  background-color: #0f2f2d;
+  color: var(--light-gray);
+  padding: 60px 40px 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.footer-logo img {
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.slogan {
+  font-style: italic;
+  font-size: 14px;
+  color: var(--light-gray-3);
+  margin-top: 5px;
+}
+
+.footer-links,
+.footer-contact {
+  min-width: 200px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #ffde59;
+}
+
+.footer-links a {
+  display: block;
+  color: var(--light-gray);
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffde59;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.footer-social {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: var(--light-gray);
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #ffde59;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 13px;
+  color: #888;
+  border-top: 1px solid #244543;
+  margin-top: 30px;
+}
+
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #0f2f2d;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    display: none;
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .property-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .features {
+    margin-top: 1rem;
+  }
+
+  .image-layout {
+    margin: 5px 20px;
+  }
+
+  .description-section {
+    margin: 10px 20px;
+  }
+
+  .map-title {
+    margin-left: 15px;
+  }
+
+  .city-name {
+    margin-left: 15px;
+}
+.back-link {
+  margin-left: 15px;
+}
+
+}
+
+@media (max-width: 375px) {
+  .map-title h2 {
+    font-size: 22px;
+  }
+}

@@ -2,20 +2,31 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
-  <link rel="manifest" href="./assets/img/site.webmanifest">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Dominican Nothirix - Inversiones Inmobiliarias en RD</title>
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./assets/styles.css" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png" />
+  <link rel="manifest" href="../assets/img/site.webmanifest" />
 </head>
+
 
 <body>
 
@@ -35,7 +46,6 @@
     <!-- Navegación con ID para JS -->
     <nav class="nav-links" id="nav-menu">
       <a href="#hero">Inicio</a>
-      <a href="#team-section">Equipo</a>
       <a href="./propiedades/index.html">Propiedades</a>
       <a href="#site-footer">Contacto</a>
     </nav>
@@ -51,15 +61,13 @@
           invertir</span> <span class="heroSecondary">con inteligencia.</span>
       </h1>
       <div class="btns">
-        <button class="contact-btn" href="#form-container">
+        <button class="contact-btn" href="#site-footer" onclick="document.getElementById('site-footer').scrollIntoView({ behavior: 'smooth' });">
           <svg>
             <rect x="0" y="0" fill="none" width="100%" height="100%" />
           </svg>
           Contacto
         </button>
         <button class="property-btn" onclick="window.location.href='../propiedades/index.html'">Propiedades</button>
-
-
       </div>
     </div>
   </section>

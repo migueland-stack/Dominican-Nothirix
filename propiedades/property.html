@@ -3,69 +3,94 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Nothirix Dominicana | Propiedad</title>
-  <link rel="stylesheet" href="../assets/styles.css">
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    rel="stylesheet" />
+
+  <!-- Project Styles -->
+  <link rel="stylesheet" href="../assets/property.css" />
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png" />
+  <link rel="manifest" href="../assets/img/site.webmanifest" />
 </head>
 
+
 <body>
-  <section class="prop-section">
-    <div id="prop-info">
-      <h1 id="prop-title">Cargando...</h1>
-      <p id="prop-location"></p>
-      <p id="prop-price"></p>
-      <p id="prop-description"></p>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="../assets/img/logo.png" alt="Dominican Nothirix logo" />
     </div>
 
-    <main class=".main-prop">
-      <button class="carousel-arrow carousel-arrow--prev" onclick="handleCarouselMove(false)">&#8249;</button>
-      <button class="carousel-arrow carousel-arrow--next" onclick="handleCarouselMove(true)">&#8250;</button>
-      <div class="carousel-container" id="carousel-container"></div>
-    </main>
-
-    <div class="back-link">
-      <a href="../propiedades/index.html">← Volver a propiedades</a>
+    <div class="hamburger" onclick="toggleMenu()" role="button" aria-label="Menú de navegación">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+
+    <nav class="nav-links" id="nav-menu">
+      <a href="../index.html#hero">Inicio</a>
+      <a href="../propiedades/index.html">Propiedades</a>
+      <a href="#site-footer">Contacto</a>
+    </nav>
+  </header>
+  <!-- Navbar -->
+  <!-- Properties container -->
+  <section id="prop-info" class="prop-section">
+    <!-- propiedad.js dynamic content -->
   </section>
-  <script src="../data/properties-data.js"></script>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="../assets/img/logo.png" alt="Dominican Nothirix Logo" />
+        <p class="slogan">Invierte con inteligencia y estilo.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <p>nothirix@gmail.com</p>
+        <p>+1 (809) 490-7813</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=61573222080586&locale=es_LA" target="_blank" rel="noopener"
+            aria-label="Facebook de Nothirix">
+            <i data-lucide="facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/nothirix/" target="_blank" rel="noopener"
+            aria-label="Instagram de Nothirix">
+            <i data-lucide="instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Dominican Nothirix. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <!-- Footer -->
+
+  <!-- Scripts con defer para cargar en orden tras el parseo del DOM -->
+  <script defer src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
+  <script defer src="../data/properties-data.js"></script>
+  <script defer src="../assets/propiedad.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const propId = Number(urlParams.get("prop"));
-      const property = properties.find(prop => prop.id === propId);
-
-      if (!property) {
-        document.body.innerHTML = "<h1>Propiedad no encontrada</h1><div class='back-link'><a href='/propiedades/index.html'>← Volver a propiedades</a></div>";
-        return;
-      }
-
-      // Actualizar título del documento
-      document.title = property.title + " | Dominican Nothirix";
-
-      // Poblar información
-      document.getElementById("prop-title").textContent = property.title;
-      document.getElementById("prop-location").textContent = `Ubicación: ${property.location}`;
-      document.getElementById("prop-price").textContent = `Precio: ${property.price}`;
-      document.getElementById("prop-description").textContent = `Tamaño: ${property.size} | ${property.beds} habitaciones | ${property.baths} baños | ${property.parking} parqueos`;
-
-      // Carrusel
-      const carouselContainer = document.getElementById("carousel-container");
-      const images = property.images && property.images.length > 0 ? property.images : [property.image];
-      images.forEach(imgUrl => {
-        const slide = document.createElement("div");
-        slide.className = "carousel-slide";
-        slide.innerHTML = `<img src="${imgUrl}" alt="Imagen de ${property.title}" loading="lazy">`;
-        carouselContainer.appendChild(slide);
-      });
-    });
-
-    function handleCarouselMove(next = true) {
-      const carousel = document.getElementById("carousel-container");
-      const slide = document.querySelector(".carousel-slide");
-      if (!slide) return;
-      const slideWidth = slide.clientWidth + 8; // 8px gap
-      carousel.scrollLeft += next ? slideWidth : -slideWidth;
-    }
+    lucide.createIcons();
   </script>
 </body>
 

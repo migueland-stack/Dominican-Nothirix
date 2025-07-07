@@ -57,7 +57,7 @@ function createPropertyCard(property) {
   card.className = "property-card";
   card.innerHTML = `
     <a href="property.html?prop=${property.id}" class="property-link">
-      <img src="${property.image}" alt="${property.title}" class="property-image">
+      <img src="${property.mainImage}" alt="${property.title}" class="property-image">
       <div class="property-content">
         <span class="property-location">${property.location}</span>
         <h3 class="property-title">${property.title}</h3>

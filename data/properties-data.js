@@ -1,15 +1,22 @@
 const properties = [
   {
     id: 1,
-    location: "La Esmeralda",
     title: "Apartamento con Impresionantes Vistas a la Montaña",
-    price: "US$252,000",
-    beds: 1,
-    baths: 1.5,
+    location: "Santiago",
+    price: "US$150,000",
+    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis quas libero recusandae maiores in omnis dignissimos molestiae sequi ab! Sint deserunt eum, vel perspiciatis debitis accusamus odit facere exercitationem officia. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis quas libero recusandae maiores in omnis dignissimos molestiae sequi ab! Sint deserunt eum, vel perspiciatis debitis accusamus odit facere exercitationem officia. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis quas libero recusandae maiores in omnis dignissimos molestiae sequi ab! Sint deserunt eum, vel perspiciatis debitis accusamus odit facere exercitationem officia.",
+    size: "120 m²",
+    beds: 2,
+    baths: 2,
     parking: 1,
-    size: "105 M²",
-    image:
-      "https://media.equityapartments.com/images/c_crop,x_0,y_0,w_1920,h_1080/c_fill,w_1920,h_1080/q_auto,f_auto/4295-228/lyle-apartments-exterior",
+    lat: 19.5313773,
+    lng: -70.6793558,
+    mainImage: "https://jscoabode.com/wp-content/uploads/2021/02/NE-Street-View-scaled.jpg",
+    gallery: [
+      "https://dynamicmedia.irvinecompany.com/is/image/content/dam/apartments/3-readytopublish/communities/orangecounty/orange/gateway/photography/ICAC-GATEWAY-PHASE_II-EXT-FEB2016LAMB-002R.jpg?&crop=330,0,1281,1281&wid=1200&iccEmbed=1&icc=AdobeRGB&resMode=sharp2&fmt=pjpeg&pscan=auto",
+      "https://photos.zillowstatic.com/fp/e602993631783af05d5c292e3e82bdec-p_e.jpg",
+      "https://images1.apartments.com/i2/z-qQj9bMAAzMCOO2FhJZhZEZHXHOz_1eWYdFlSuGZCU/117/image.jpg",
+    ]
   },
   {
     id: 2,
@@ -20,8 +27,14 @@ const properties = [
     baths: 1,
     parking: 2,
     size: "127 M²",
-    image:
+    mainImage:
       "https://galmangroup.com/wp-content/uploads/2021/12/whitney-apartments-featured-image.jpg",
+    gallery: [
+      "../assets/img/mountain-view-1.jpg",
+      "../assets/img/mountain-view-2.jpg",
+      "../assets/img/mountain-view-3.jpg",
+    ],
+    mapEmbed: '<iframe src="https://www.google.com/maps/embed?..."></iframe>',
   },
   {
     id: 3,
@@ -32,8 +45,14 @@ const properties = [
     baths: 2,
     parking: 2,
     size: "150 M²",
-    image:
+    mainImage:
       "https://media.equityapartments.com/images/c_crop,x_0,y_0,w_2048,h_1152/c_fill,w_2048,h_1152/q_auto,f_auto/4304-23/the-encore-apartments-pool",
+    gallery: [
+      "../assets/img/mountain-view-1.jpg",
+      "../assets/img/mountain-view-2.jpg",
+      "../assets/img/mountain-view-3.jpg",
+    ],
+    mapEmbed: '<iframe src="https://www.google.com/maps/embed?..."></iframe>',
   },
   {
     id: 4,
@@ -44,8 +63,14 @@ const properties = [
     baths: 3.5,
     parking: 3,
     size: "220 M²",
-    image:
+    mainImage:
       "https://jscoabode.com/wp-content/uploads/2021/02/NE-Street-View-2048x1344.jpg",
+    gallery: [
+      "../assets/img/mountain-view-1.jpg",
+      "../assets/img/mountain-view-2.jpg",
+      "../assets/img/mountain-view-3.jpg",
+    ],
+    mapEmbed: '<iframe src="https://www.google.com/maps/embed?..."></iframe>',
   },
   {
     id: 5,
@@ -56,8 +81,14 @@ const properties = [
     baths: 2,
     parking: 2,
     size: "140 M²",
-    image:
+    mainImage:
       "https://www.sgl.do/upload/olimare/properties/35464c848f410e55a13bb9d78e7fddd0/apartment-cibao-santiago-gurabo-19894_full.jpg",
+    gallery: [
+      "../assets/img/mountain-view-1.jpg",
+      "../assets/img/mountain-view-2.jpg",
+      "../assets/img/mountain-view-3.jpg",
+    ],
+    mapEmbed: '<iframe src="https://www.google.com/maps/embed?..."></iframe>',
   },
   {
     id: 6,
@@ -68,8 +99,14 @@ const properties = [
     baths: 2,
     parking: 3,
     size: "180 M²",
-    image:
+    mainImage:
       "https://assets.easybroker.com/property_images/4414362/74860048/EB-PY4362.jpg?height=300&version=1715219660&width=450",
+    gallery: [
+      "../assets/img/mountain-view-1.jpg",
+      "../assets/img/mountain-view-2.jpg",
+      "../assets/img/mountain-view-3.jpg",
+    ],
+    mapEmbed: '<iframe src="https://www.google.com/maps/embed?..."></iframe>',
   },
   {
     id: 7,
@@ -80,8 +117,14 @@ const properties = [
     baths: 3,
     parking: 2,
     size: "160 M²",
-    image:
+    mainImage:
       "https://www.sgl.do/upload/olimare/properties/e6e713296627dff6475085cc6a224464/properties-3565-58940.jpeg",
+    gallery: [
+      "../assets/img/mountain-view-1.jpg",
+      "../assets/img/mountain-view-2.jpg",
+      "../assets/img/mountain-view-3.jpg",
+    ],
+    mapEmbed: '<iframe src="https://www.google.com/maps/embed?..."></iframe>',
   },
   {
     id: 8,
@@ -92,7 +135,13 @@ const properties = [
     baths: 4,
     parking: 4,
     size: "250 M²",
-    image:
+    mainImage:
       "https://www.bienesonline.com/republica-dominicana/photos/vendo-apartamento-en-valle-verde-APV174241639433259-150.jpg",
+    gallery: [
+      "../assets/img/mountain-view-1.jpg",
+      "../assets/img/mountain-view-2.jpg",
+      "../assets/img/mountain-view-3.jpg",
+    ],
+    mapEmbed: '<iframe src="https://www.google.com/maps/embed?..."></iframe>',
   },
 ];
