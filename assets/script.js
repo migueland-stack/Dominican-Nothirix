@@ -1,131 +1,181 @@
-//Menu Toggle
-function toggleMenu() {
-  const nav = document.getElementById("nav-menu");
-  nav.classList.toggle("show");
-}
-
-//Modal/Filter functions
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("abrirModalFiltros").addEventListener("click", () => {
-    document.getElementById("modalFiltros").classList.remove("oculto");
-  });
+  // ===== MENU TOGGLE =====
+  function toggleMenu() {
+    const nav = document.getElementById("nav-menu");
+    if (nav) {
+      nav.classList.toggle("show");
+    }
+  }
+  window.toggleMenu = toggleMenu; // Necesario para onclick en HTML
 
-  document
-    .getElementById("cerrarModalFiltros")
-    .addEventListener("click", () => {
-      document.getElementById("modalFiltros").classList.add("oculto");
+  // ===== MODAL / FILTER FUNCTIONS =====
+  const abrirModal = document.getElementById("abrirModalFiltros");
+  const cerrarModal = document.getElementById("cerrarModalFiltros");
+  const modalFiltros = document.getElementById("modalFiltros");
+  const aplicarFiltros = document.getElementById("aplicarFiltrosModal");
+
+  if (abrirModal && cerrarModal && modalFiltros && aplicarFiltros) {
+    abrirModal.addEventListener("click", () => {
+      modalFiltros.classList.remove("oculto");
     });
 
-  document.getElementById("modalFiltros").addEventListener("click", (e) => {
-    if (e.target.id === "modalFiltros") {
-      document.getElementById("modalFiltros").classList.add("oculto");
-    }
-  });
+    cerrarModal.addEventListener("click", () => {
+      modalFiltros.classList.add("oculto");
+    });
 
-  document
-    .getElementById("aplicarFiltrosModal")
-    .addEventListener("click", () => {
+    modalFiltros.addEventListener("click", (e) => {
+      if (e.target.id === "modalFiltros") {
+        modalFiltros.classList.add("oculto");
+      }
+    });
+
+    aplicarFiltros.addEventListener("click", () => {
+      if (typeof properties === "undefined") return;
+
       const filtros = {
-        ciudad: document.getElementById("ciudadModal").value,
-        habitaciones: document.getElementById("habitacionesModal").value,
-        banos: document.getElementById("banosModal").value,
-        parqueos: document.getElementById("parqueosModal").value,
-        precioMin: document.getElementById("precioMinModal").value,
-        precioMax: document.getElementById("precioMaxModal").value,
+        ciudad: document.getElementById("ciudadModal").value.trim(),
+        habitaciones:
+          parseInt(document.getElementById("habitacionesModal").value) || 0,
+        banos: parseInt(document.getElementById("banosModal").value) || 0,
+        parqueos: parseInt(document.getElementById("parqueosModal").value) || 0,
+        precioMin:
+          parseInt(document.getElementById("precioMinModal").value) || 0,
+        precioMax:
+          parseInt(document.getElementById("precioMaxModal").value) || Infinity,
       };
 
-      console.log("Filtros aplicados desde modal:", filtros);
+      const filtered = properties.filter((prop) => {
+        const propPrice = parseInt(prop.price.replace(/[^0-9]/g, ""));
+        const propBanos = parseFloat(prop.baths);
+        return (
+          (filtros.ciudad === "" ||
+            prop.location
+              .toLowerCase()
+              .includes(filtros.ciudad.toLowerCase())) &&
+          (filtros.habitaciones === 0 || prop.beds >= filtros.habitaciones) &&
+          (filtros.banos === 0 || propBanos >= filtros.banos) &&
+          (filtros.parqueos === 0 || prop.parking >= filtros.parqueos) &&
+          propPrice >= filtros.precioMin &&
+          propPrice <= filtros.precioMax
+        );
+      });
 
-      document.getElementById("modalFiltros").classList.add("oculto");
+      renderProperties(filtered);
+      modalFiltros.classList.add("oculto");
     });
-});
-
-//Update properties count
-function updateFoundPropertiesText(count) {
-  const foundPropsEl = document.querySelector(".found-props");
-  if (!foundPropsEl) return;
-  if (count === 1) {
-    foundPropsEl.textContent = "1 propiedad encontrada.";
-  } else {
-    foundPropsEl.textContent = `${count} propiedades encontradas.`;
   }
-}
 
-//Create properties (cards)
-function createPropertyCard(property) {
-  const card = document.createElement("div");
-  card.className = "property-card";
-  card.innerHTML = `
-    <a href="property.html?prop=${property.id}" class="property-link">
-      <img src="${property.mainImage}" alt="${property.title}" class="property-image">
-      <div class="property-content">
-        <span class="property-location">${property.location}</span>
-        <h3 class="property-title">${property.title}</h3>
-        <span class="property-price">${property.price}</span>
-        <div class="property-details">
-          <span><i data-lucide="bed"></i> ${property.beds}</span>
-          <span><i data-lucide="bath"></i> ${property.baths}</span>
-          <span><i data-lucide="car"></i> ${property.parking}</span>
-          <span><i data-lucide="ruler"></i> ${property.size}</span>
+  // ===== FOUND PROPERTIES COUNTER =====
+  function updateFoundPropertiesText(count) {
+    const foundPropsEl = document.querySelector(".found-props");
+    if (!foundPropsEl) return;
+
+    if (count === 0) {
+      foundPropsEl.textContent = "No se encontraron propiedades.";
+    } else if (count === 1) {
+      foundPropsEl.textContent = "1 propiedad encontrada.";
+    } else {
+      foundPropsEl.textContent = `${count} propiedades encontradas.`;
+    }
+  }
+
+  // ===== CREATE PROPERTY CARD =====
+  function createPropertyCard(property) {
+    const card = document.createElement("div");
+    card.className = "property-card";
+    card.innerHTML = `
+      <a href="property.html?prop=${property.id}" class="property-link">
+        <img src="${property.mainImage}" alt="${property.title}" class="property-image">
+        <div class="property-content">
+          <span class="property-location">${property.location}</span>
+          <h3 class="property-title">${property.title}</h3>
+          <span class="property-price">${property.price}</span>
+          <div class="property-details">
+            <span><i data-lucide="bed"></i> ${property.beds}</span>
+            <span><i data-lucide="bath"></i> ${property.baths}</span>
+            <span><i data-lucide="car"></i> ${property.parking}</span>
+            <span><i data-lucide="ruler"></i> ${property.size}</span>
+          </div>
         </div>
-      </div>
-    </a>
-  `;
+      </a>
+    `;
+    return card;
+  }
 
-  return card;
-}
-
-//Render properties
+  // ===== RENDER PROPERTIES =====
 function renderProperties(properties) {
   const container = document.getElementById("properties-container");
+  if (!container) return;
   container.innerHTML = "";
-  properties.forEach((property) => {
-    const card = createPropertyCard(property);
-    container.appendChild(card);
-  });
-  lucide.createIcons();
 
+  if (properties.length === 0) {
+    container.innerHTML = `
+      <div class="no-properties-message">
+        <img src="../assets/img/no-propiedades.png" alt="No properties found" class="no-properties-illustration">
+        <p>🏡 ¡Ups! Por el momento no hay propiedades disponibles con estos filtros.</p>
+        <p>Te invitamos a explorar otras opciones o contactarnos para ayudarte a encontrar la propiedad ideal para ti.</p>
+        <button class="filter-btn" onclick="window.location.href='../propiedades/index.html'">Ver todas las propiedades</button>
+      </div>
+    `;
+  } else {
+    properties.forEach((property) => {
+      const card = createPropertyCard(property);
+      container.appendChild(card);
+    });
+  }
+
+  lucide.createIcons();
   updateFoundPropertiesText(properties.length);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  renderProperties(properties);
-  lucide.createIcons();
-});
 
-//Modal Filters
-document.getElementById("aplicarFiltrosModal").addEventListener("click", () => {
-  const filtros = {
-    ciudad: document.getElementById("ciudadModal").value.trim(),
-    habitaciones:
-      parseInt(document.getElementById("habitacionesModal").value) || 0,
-    banos: parseInt(document.getElementById("banosModal").value) || 0,
-    parqueos: parseInt(document.getElementById("parqueosModal").value) || 0,
-    precioMin: parseInt(document.getElementById("precioMinModal").value) || 0,
-    precioMax:
-      parseInt(document.getElementById("precioMaxModal").value) || Infinity,
-  };
+  if (typeof properties !== "undefined") {
+    renderProperties(properties);
+  }
 
-  const filtered = properties.filter((prop) => {
-    const propPrice = parseInt(prop.price.replace(/[^0-9]/g, ""));
-    const propBanos = parseFloat(prop.baths);
+  // ===== CONTACT FORM WITH GREEN SUCCESS =====
+  const contactForm = document.getElementById("contact-form");
+  const submitButton = document.getElementById("submit-button");
 
-    return (
-      (filtros.ciudad === "" ||
-        prop.location.toLowerCase().includes(filtros.ciudad.toLowerCase())) &&
-      (filtros.habitaciones === 0 || prop.beds >= filtros.habitaciones) &&
-      (filtros.banos === 0 || propBanos >= filtros.banos) &&
-      (filtros.parqueos === 0 || prop.parking >= filtros.parqueos) &&
-      propPrice >= filtros.precioMin &&
-      propPrice <= filtros.precioMax
-    );
-  });
+  if (contactForm && submitButton) {
+    contactForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const originalText = submitButton.textContent;
+      const originalBackground = submitButton.style.backgroundColor;
 
-  document.querySelector(
-    ".found-props"
-  ).textContent = `${filtered.length} Propiedades encontradas.`;
+      submitButton.disabled = true;
+      submitButton.textContent = "Enviando...";
 
-  renderProperties(filtered);
+      const formData = new FormData(contactForm);
+      try {
+        const response = await fetch(contactForm.action, {
+          method: contactForm.method,
+          body: formData,
+          headers: { Accept: "application/json" },
+        });
 
-  document.getElementById("modalFiltros").classList.add("oculto");
+        if (response.ok) {
+          submitButton.textContent = "¡Mensaje enviado!";
+          submitButton.style.backgroundColor = "#28a745"; // Verde éxito
+          contactForm.reset();
+        } else {
+          submitButton.textContent = "Error, intente de nuevo";
+          submitButton.style.backgroundColor = "#dc3545"; // Rojo error
+          setTimeout(() => {
+            submitButton.textContent = originalText;
+            submitButton.style.backgroundColor = originalBackground;
+            submitButton.disabled = false;
+          }, 3000);
+        }
+      } catch (error) {
+        submitButton.textContent = "Error, intente de nuevo";
+        submitButton.style.backgroundColor = "#dc3545";
+        setTimeout(() => {
+          submitButton.textContent = originalText;
+          submitButton.style.backgroundColor = originalBackground;
+          submitButton.disabled = false;
+        }, 3000);
+      }
+    });
+  }
 });

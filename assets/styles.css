@@ -230,7 +230,7 @@ body {
   align-items: flex-start;
   max-width: 1200px;
   margin: 0 auto;
-  margin-bottom: -200px;
+  margin-bottom: -160px;
   padding: 80px 40px;
   gap: 20px;
 }
@@ -555,6 +555,18 @@ textarea {
   line-height: 1.6;
   color: var(--mid-gray);
   font-family: 'Segoe UI', sans-serif, sans-serif;
+}
+
+.no-properties-message {
+  font-size: 20px;
+  text-align: center;
+}
+
+.no-properties-illustration {
+  max-width: 300px;
+  margin: 1rem auto;
+  display: block;
+  opacity: 0.8;
 }
 
 

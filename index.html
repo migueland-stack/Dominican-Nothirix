@@ -15,7 +15,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    rel="stylesheet" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="./assets/styles.css" />
@@ -61,7 +63,8 @@
           invertir</span> <span class="heroSecondary">con inteligencia.</span>
       </h1>
       <div class="btns">
-        <button class="contact-btn" href="#site-footer" onclick="document.getElementById('site-footer').scrollIntoView({ behavior: 'smooth' });">
+        <button class="contact-btn" href="#site-footer"
+          onclick="document.getElementById('site-footer').scrollIntoView({ behavior: 'smooth' });">
           <svg>
             <rect x="0" y="0" fill="none" width="100%" height="100%" />
           </svg>
@@ -84,12 +87,13 @@
       <img src="./assets/img/form-illust.png" alt="Agente con llave y casa" />
     </div>
     <div class="right">
-      <form>
-        <input type="text" placeholder="Nombre" aria-label="Nombre" required />
-        <input type="text" placeholder="Apellido" aria-label="Apellido" required />
-        <input type="text" placeholder="Interés" aria-label="Interés" required />
-        <textarea placeholder="Mensaje" aria-label="Mensaje" required></textarea>
-        <button class="form-btn" type="submit">Enviar</button>
+      <form id="contact-form" action="https://formspree.io/f/mldnypvg" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre" aria-label="Nombre" required />
+        <input type="text" name="apellido" placeholder="Apellido" aria-label="Apellido" required />
+        <input type="text" name="interes" placeholder="Interés" aria-label="Interés" required />
+        <input type="email" name="email" placeholder="Email" aria-label="Email" required />
+        <textarea name="mensaje" placeholder="Mensaje" aria-label="Mensaje" required></textarea>
+        <button class="form-btn" type="submit" id="submit-button">Enviar</button>
         <p class="privacy-note">
           This site is protected by reCAPTCHA and the Google
           <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.

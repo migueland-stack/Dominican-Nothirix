@@ -22,6 +22,12 @@ window.addEventListener("load", () => {
 
   const propInfo = document.getElementById("prop-info");
   propInfo.innerHTML = `
+<div class="whats-float">
+    <a href="https://wa.me/18094907813"
+       target="_blank">
+        <i class="fa fa-whatsapp"></i><span>WhatsApp<br><small>+1 809-490-7813</small></span>
+    </a>
+</div>
     <section class="property-container">
           <div class="back-link">
         <a href="../propiedades/index.html">Volver a propiedades</a>
@@ -83,7 +89,7 @@ window.addEventListener("load", () => {
         <h3>Descripción</h3>
         <p class="desc">${property.description}</p>
       </section>
-    </section>
+      </section>
   `;
 
   // Convertir coords lat/lng a EPSG:3857
