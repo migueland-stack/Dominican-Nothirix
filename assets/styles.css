@@ -43,7 +43,7 @@ html {
 
 body {
   margin: 0;
-   font-family: "Nunito Sans", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .navbar {
@@ -282,6 +282,10 @@ textarea {
 
 textarea {
   height: 150px;
+}
+
+textarea::placeholder {
+  font-family: "nunito", sans-serif;
 }
 
 .form-btn {
@@ -880,7 +884,8 @@ textarea {
   font-weight: bold;
 }
 
-.container {  display: grid;
+.container {
+  display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 5px 5px;
@@ -891,13 +896,21 @@ textarea {
     "main-grid sub3";
 }
 
-.main-grid { grid-area: main-grid; }
+.main-grid {
+  grid-area: main-grid;
+}
 
-.sub1 { grid-area: sub1; }
+.sub1 {
+  grid-area: sub1;
+}
 
-.sub2 { grid-area: sub2; }
+.sub2 {
+  grid-area: sub2;
+}
 
-.sub3 { grid-area: sub3; }
+.sub3 {
+  grid-area: sub3;
+}
 
 .main-prop-img {
   width: 100%;
@@ -937,7 +950,7 @@ textarea {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0, 0, 0, 0.9);
   align-items: center;
   justify-content: center;
 }

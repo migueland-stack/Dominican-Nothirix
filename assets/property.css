@@ -29,7 +29,7 @@ html {
 
 body {
   margin: 0;
-   font-family: "Nunito Sans", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .navbar {
@@ -100,41 +100,42 @@ body {
 }
 
 .whats-float {
-    position: fixed;
-    transform:translate(108px,0px);
-    top: 70%;
-    right:0;
-    width:150px;
-    overflow: hidden;
-    background-color: #25d366;
-    color: #FFF;
-    border-radius: 4px 0 0 4px;
-    z-index: 10;
-    transition: all 0.5s ease-in-out;
-    vertical-align: middle;
+  position: fixed;
+  transform: translate(108px, 0px);
+  top: 70%;
+  right: 0;
+  width: 150px;
+  overflow: hidden;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 4px 0 0 4px;
+  z-index: 10;
+  transition: all 0.5s ease-in-out;
+  vertical-align: middle;
 }
+
 .whats-float a span {
-    color: white;
-    font-size: 15px;
-    padding-top: 8px;
-    padding-bottom: 10px;
-    position: absolute;
-    line-height: 16px;
-    font-weight: bolder;
+  color: white;
+  font-size: 15px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  position: absolute;
+  line-height: 16px;
+  font-weight: bolder;
 }
 
 .whats-float i {
-    font-size: 30px;
-    color: white;
-    line-height: 30px;
-    padding: 10px;
-    transition: all 0.5s ease-in-out;
-    text-align:center;
+  font-size: 30px;
+  color: white;
+  line-height: 30px;
+  padding: 10px;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
 }
 
 .whats-float:hover {
-    color: #FFFFFF;
-    transform:translate(0px,0px);
+  color: #FFFFFF;
+  transform: translate(0px, 0px);
 }
 
 .back-link {
@@ -148,24 +149,28 @@ body {
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
-  padding-left: 0; /* Inicial sin padding */
+  padding-left: 0;
+  /* Inicial sin padding */
 }
 
 .back-link a::before {
   content: "←";
   position: absolute;
-  left: -20px; /* Posición inicial fuera de vista */
+  left: -20px;
+  /* Posición inicial fuera de vista */
   opacity: 0;
   transition: all 0.3s ease;
 }
 
 .back-link a:hover {
   color: var(--primary-teal-hover);
-  padding-left: 20px; /* Empuja el texto para dar espacio a la flecha */
+  padding-left: 20px;
+  /* Empuja el texto para dar espacio a la flecha */
 }
 
 .back-link a:hover::before {
-  left: 0; /* Mueve la flecha a su posición visible */
+  left: 0;
+  /* Mueve la flecha a su posición visible */
   opacity: 1;
 }
 
@@ -432,10 +437,11 @@ body {
 
   .city-name {
     margin-left: 15px;
-}
-.back-link {
-  margin-left: 15px;
-}
+  }
+
+  .back-link {
+    margin-left: 15px;
+  }
 
 }
 
