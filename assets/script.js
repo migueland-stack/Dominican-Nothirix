@@ -104,28 +104,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ===== RENDER PROPERTIES =====
 function renderProperties(properties) {
+  const loader = document.getElementById("loader");
   const container = document.getElementById("properties-container");
+
   if (!container) return;
-  container.innerHTML = "";
 
-  if (properties.length === 0) {
-    container.innerHTML = `
-      <div class="no-properties-message">
-        <img src="../assets/img/no-propiedades.png" alt="No properties found" class="no-properties-illustration">
-        <p>🏡 ¡Ups! Por el momento no hay propiedades disponibles con estos filtros.</p>
-        <p>Te invitamos a explorar otras opciones o contactarnos para ayudarte a encontrar la propiedad ideal para ti.</p>
-        <button class="filter-btn" onclick="window.location.href='../propiedades/index.html'">Ver todas las propiedades</button>
-      </div>
-    `;
-  } else {
-    properties.forEach((property) => {
-      const card = createPropertyCard(property);
-      container.appendChild(card);
-    });
-  }
+  // Show loader
+  loader?.classList.remove("oculto");
 
-  lucide.createIcons();
-  updateFoundPropertiesText(properties.length);
+  // Simulate loading delay (optional)
+  setTimeout(() => {
+    container.innerHTML = "";
+
+    if (properties.length === 0) {
+      container.innerHTML = `
+        <div class="no-properties-message">
+          <img src="../assets/img/no-propiedades.png" alt="No properties found" class="no-properties-illustration">
+          <p>🏡 ¡Ups! Por el momento no hay propiedades disponibles con estos filtros.</p>
+          <p>Te invitamos a explorar otras opciones o contactarnos para ayudarte a encontrar la propiedad ideal para ti.</p>
+          <button class="filter-btn" onclick="window.location.href='../propiedades/index.html'">Ver todas las propiedades</button>
+        </div>
+      `;
+    } else {
+      properties.forEach((property) => {
+        const card = createPropertyCard(property);
+
+        // Add click handler to show loader on property card click
+        const link = card.querySelector("a.property-link");
+        if (link) {
+          link.addEventListener("click", (e) => {
+            e.preventDefault(); // prevent immediate navigation
+            loader?.classList.remove("oculto"); // show loader
+
+            setTimeout(() => {
+              window.location.href = link.href; // navigate after delay
+            }, 400); // optional delay for smoother transition
+          });
+        }
+
+        container.appendChild(card);
+      });
+    }
+
+    lucide.createIcons();
+    updateFoundPropertiesText(properties.length);
+
+    // Hide loader
+    loader?.classList.add("oculto");
+  }, 600); // simulated delay for effect
 }
 
 
