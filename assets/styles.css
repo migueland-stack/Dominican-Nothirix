@@ -27,7 +27,6 @@ html {
   --accent-white: white;
 }
 
-
 .qwitcher-grypen-bold {
   font-family: "Qwitcher Grypen", cursive;
   font-weight: 400;
@@ -39,6 +38,12 @@ html {
   color: var(--primary-yellow);
   z-index: 1;
   position: relative;
+}
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: auto;
 }
 
 body {
@@ -1129,8 +1134,13 @@ textarea::placeholder {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 

@@ -16,6 +16,12 @@ const properties = [
       "https://dynamicmedia.irvinecompany.com/is/image/content/dam/apartments/3-readytopublish/communities/orangecounty/orange/gateway/photography/ICAC-GATEWAY-PHASE_II-EXT-FEB2016LAMB-002R.jpg?&crop=330,0,1281,1281&wid=1200&iccEmbed=1&icc=AdobeRGB&resMode=sharp2&fmt=pjpeg&pscan=auto",
       "https://photos.zillowstatic.com/fp/e602993631783af05d5c292e3e82bdec-p_e.jpg",
       "https://images1.apartments.com/i2/z-qQj9bMAAzMCOO2FhJZhZEZHXHOz_1eWYdFlSuGZCU/117/image.jpg",
+      "https://dynamicmedia.irvinecompany.com/is/image/content/dam/apartments/3-readytopublish/communities/orangecounty/orange/gateway/photography/ICAC-GATEWAY-PHASE_II-EXT-FEB2016LAMB-002R.jpg?&crop=330,0,1281,1281&wid=1200&iccEmbed=1&icc=AdobeRGB&resMode=sharp2&fmt=pjpeg&pscan=auto",
+      "https://photos.zillowstatic.com/fp/e602993631783af05d5c292e3e82bdec-p_e.jpg",
+      "https://images1.apartments.com/i2/z-qQj9bMAAzMCOO2FhJZhZEZHXHOz_1eWYdFlSuGZCU/117/image.jpg",
+      "https://dynamicmedia.irvinecompany.com/is/image/content/dam/apartments/3-readytopublish/communities/orangecounty/orange/gateway/photography/ICAC-GATEWAY-PHASE_II-EXT-FEB2016LAMB-002R.jpg?&crop=330,0,1281,1281&wid=1200&iccEmbed=1&icc=AdobeRGB&resMode=sharp2&fmt=pjpeg&pscan=auto",
+      "https://photos.zillowstatic.com/fp/e602993631783af05d5c292e3e82bdec-p_e.jpg",
+      "https://images1.apartments.com/i2/z-qQj9bMAAzMCOO2FhJZhZEZHXHOz_1eWYdFlSuGZCU/117/image.jpg",
     ]
   },
   {

@@ -4,9 +4,112 @@ function toggleMenu() {
   nav.classList.toggle("show");
 }
 
+// Image Modal and Carousel functionality
+let currentImageIndex = 0;
+let allImages = [];
+
+function initImageModal() {
+  const modal = document.getElementById("image-modal");
+  const modalImg = document.getElementById("modal-img");
+  const modalClose = document.getElementById("modal-close");
+  const prevBtn = document.getElementById("carousel-prev");
+  const nextBtn = document.getElementById("carousel-next");
+  const counter = document.getElementById("image-counter");
+
+  // Only proceed if modal exists
+  if (!modal || !modalImg || !modalClose || !prevBtn || !nextBtn || !counter) {
+    console.warn("Modal elements not found");
+    return;
+  }
+
+  // Close modal functions
+  const closeModal = () => {
+    modal.classList.add("hidden");
+    document.body.style.overflow = '';
+  };
+
+  // Event listeners for closing modal
+  modalClose.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('hidden')) {
+      switch (e.key) {
+        case 'Escape':
+          closeModal();
+          break;
+        case 'ArrowLeft':
+          navigateImage(-1);
+          break;
+        case 'ArrowRight':
+          navigateImage(1);
+          break;
+      }
+    }
+  });
+
+  // Navigation functions
+  function updateImage() {
+    if (allImages.length === 0) return;
+
+    modalImg.src = allImages[currentImageIndex];
+    counter.textContent = `${currentImageIndex + 1} / ${allImages.length}`;
+
+    // Update button states
+    prevBtn.disabled = currentImageIndex === 0;
+    nextBtn.disabled = currentImageIndex === allImages.length - 1;
+  }
+
+  function navigateImage(direction) {
+    const newIndex = currentImageIndex + direction;
+    if (newIndex >= 0 && newIndex < allImages.length) {
+      currentImageIndex = newIndex;
+      updateImage();
+    }
+  }
+
+  // Navigation button event listeners
+  prevBtn.addEventListener('click', () => navigateImage(-1));
+  nextBtn.addEventListener('click', () => navigateImage(1));
+
+  // Open modal function - make it global
+  window.openImageModal = function (imageSrc) {
+    if (allImages.length === 0) return;
+
+    const clickedImageIndex = allImages.indexOf(imageSrc);
+    currentImageIndex = clickedImageIndex !== -1 ? clickedImageIndex : 0;
+
+    updateImage();
+    modal.classList.remove("hidden");
+    document.body.style.overflow = 'hidden';
+  };
+}
+
+function attachImageClickEvents() {
+  const images = document.querySelectorAll(".main-prop-img, .prop-gallery-img");
+
+  images.forEach((img) => {
+    img.addEventListener("click", () => {
+      if (window.openImageModal) {
+        window.openImageModal(img.src);
+      }
+    });
+  });
+}
+
 window.addEventListener("load", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const propId = Number(urlParams.get("prop"));
+
+  if (!properties) {
+    console.error("Properties data not loaded");
+    return;
+  }
+
   const property = properties.find((prop) => prop.id === propId);
 
   if (!property) {
@@ -19,6 +122,17 @@ window.addEventListener("load", () => {
   }
 
   document.title = `${property.title} | Dominican Nothirix`;
+
+  // Build all images array (main + gallery) - this keeps ALL images for the modal
+  allImages = [property.mainImage];
+  if (property.gallery && property.gallery.length > 0) {
+    allImages = allImages.concat(property.gallery);
+  }
+
+  // Limit gallery images to first 4 for display only
+  const displayGallery = property.gallery && property.gallery.length > 0
+    ? property.gallery.slice(0, 3)
+    : [];
 
   const propInfo = document.getElementById("prop-info");
   propInfo.innerHTML = `
@@ -34,20 +148,23 @@ window.addEventListener("load", () => {
       </div>
       <div class="image-layout">
         <div class="main-image">
-          <img src="${property.mainImage}" alt="${
-    property.title
-  }" class="main-prop-img" />
+          <img src="${property.mainImage}" alt="${property.title}" class="main-prop-img" />
         </div>
         <div class="side-images">
-          ${property.gallery
-            .map(
-              (img, i) => `
-            <img src="${img}" alt="${property.title} - Imagen ${
-                i + 1
-              }" class="prop-gallery-img" />
-          `
-            )
-            .join("")}
+          ${displayGallery.length > 0
+      ? displayGallery
+        .map(
+          (img, i) => `
+                <img src="${img}" alt="${property.title} - Imagen ${i + 1}" class="prop-gallery-img" />
+              `
+        )
+        .join("")
+      : '<p>No hay imágenes adicionales disponibles</p>'
+    }
+          ${property.gallery && property.gallery.length > 4
+      ? `<div class="more-images-indicator">+${property.gallery.length - 4} más</div>`
+      : ''
+    }
         </div>
       </div>
 
@@ -92,63 +209,58 @@ window.addEventListener("load", () => {
       </section>
   `;
 
-  // Convertir coords lat/lng a EPSG:3857
-  const coords = ol.proj.fromLonLat([property.lng, property.lat]);
+  // Initialize modal carousel after content is loaded
+  setTimeout(() => {
+    initImageModal();
+    attachImageClickEvents();
+  }, 100);
 
-  const map = new ol.Map({
-    target: "map",
-    layers: [
-      new ol.layer.Tile({
-        source: new ol.source.OSM(),
-      }),
-    ],
-    view: new ol.View({
-      center: coords,
-      zoom: 15,
-    }),
-  });
+  // Initialize map if OpenLayers is available
+  if (typeof ol !== 'undefined' && property.lat && property.lng) {
+    try {
+      // Convert coords lat/lng to EPSG:3857
+      const coords = ol.proj.fromLonLat([property.lng, property.lat]);
 
-  const marker = new ol.Feature({
-    geometry: new ol.geom.Point(coords),
-  });
-
-  marker.setStyle(
-    new ol.style.Style({
-      image: new ol.style.Circle({
-        radius: 8,
-        fill: new ol.style.Fill({ color: "red" }),
-        stroke: new ol.style.Stroke({ color: "white", width: 2 }),
-      }),
-    })
-  );
-
-  const vectorSource = new ol.source.Vector({
-    features: [marker],
-  });
-
-  const markerVectorLayer = new ol.layer.Vector({
-    source: vectorSource,
-  });
-
-  map.addLayer(markerVectorLayer);
-
-  if (document.getElementById("image-modal")) {
-    const modal = document.getElementById("image-modal");
-    const modalImg = document.getElementById("modal-img");
-    const modalClose = document.getElementById("modal-close");
-
-    modalClose.onclick = () => modal.classList.add("hidden");
-    modal.onclick = (e) => {
-      if (e.target === modal) modal.classList.add("hidden");
-    };
-
-    document
-      .querySelectorAll(".main-prop-img, .prop-gallery-img")
-      .forEach((img) => {
-        img.addEventListener("click", () => {
-          modalImg.src = img.src;
-          modal.classList.remove("hidden");
-        });
+      const map = new ol.Map({
+        target: "map",
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM(),
+          }),
+        ],
+        view: new ol.View({
+          center: coords,
+          zoom: 15,
+        }),
       });
+
+      const marker = new ol.Feature({
+        geometry: new ol.geom.Point(coords),
+      });
+
+      marker.setStyle(
+        new ol.style.Style({
+          image: new ol.style.Circle({
+            radius: 8,
+            fill: new ol.style.Fill({ color: "red" }),
+            stroke: new ol.style.Stroke({ color: "white", width: 2 }),
+          }),
+        })
+      );
+
+      const vectorSource = new ol.source.Vector({
+        features: [marker],
+      });
+
+      const markerVectorLayer = new ol.layer.Vector({
+        source: vectorSource,
+      });
+
+      map.addLayer(markerVectorLayer);
+    } catch (error) {
+      console.error("Error initializing map:", error);
+    }
+  } else {
+    console.warn("OpenLayers not available or property coordinates missing");
   }
 });
