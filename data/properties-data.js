@@ -9,7 +9,17 @@ const properties = [
     title: "Residencial Quinta Vista",
     location: "Santiago",
     price: "US$115,000.00",
-    description: "Apartamento de 85 m² en moderno proyecto ecoamigable con certificado EDGE. Vive con comodidad y estilo en este hermoso apartamento de 3 habitaciones (principal con baño privado y walk-in closet), 2 baños completos, amplia sala-comedor con excelente iluminación, cocina con desayunador, área de lavado, balcón privado y 1 parqueo asignado. Ubicado en un proyecto cerrado y familiar, pensado para el bienestar y la recreación: <ul><li>Piscina para adultos y niños</li><li>Cancha deportiva</li><li>Área de juegos infantiles</li><li>Ciclovía y sendero ecológico</li><li>Gazebo y zona BBQ</li><li>Escaleras y pre-instalación para inversores/aires</li><li>Seguridad 24/7 con cámaras y control de acceso</li></ul> Un ambiente moderno, seguro y sostenible, ideal para vivir o invertir, con financiamiento disponible.",
+    description: `Apartamento de 85 m² en moderno proyecto ecoamigable con certificado EDGE. Vive con comodidad y estilo en este hermoso apartamento de 3 habitaciones (principal con baño privado y walk-in closet), 2 baños completos, amplia sala-comedor con excelente iluminación, cocina con desayunador, área de lavado, balcón privado y 1 parqueo asignado. Ubicado en un proyecto cerrado y familiar, pensado para el bienestar y la recreación: 
+    <ul>
+      <li>🏊 Piscina para adultos y niños</li>
+      <li>🏀 Cancha deportiva</li>
+      <li>🎠 Área de juegos infantiles</li>
+      <li>🚲 Ciclovía y sendero ecológico</li>
+      <li>🎉 Gazebo y zona BBQ</li>
+      <li>🛗 Escaleras y pre-instalación para inversores/aires</li>
+      <li>🛡️ Seguridad 24/7 con cámaras y control de acceso</li>
+    </ul>
+    Un ambiente moderno, seguro y sostenible, ideal para vivir o invertir, con financiamiento disponible.`,
     size: "85 m²",
     beds: 3,
     baths: 2,
@@ -78,7 +88,7 @@ const properties = [
     id: 3,
     title: "Residencial Rosmary V (Apartamento)",
     location: "Santiago",
-    price: "US$430,500.00",
+    price: "US$273,000.00",
     description: `
     <p>Este proyecto cuenta con 65 apartamentos los cuales 13 son "Penthouse".</p>
     <ul>
