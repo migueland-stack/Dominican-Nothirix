@@ -1,153 +1,189 @@
+function generateGallery(propertyFolder, count, extension = 'webp') {
+  const basePath = "../assets/properties/" + propertyFolder;
+  return Array.from({ length: count }, (_, i) => `${basePath}/${i + 1}.${extension}`);
+}
+
 const properties = [
   {
     id: 1,
-    title: "Apartamento con Impresionantes Vistas a la Montaña",
+    title: "Residencial Quinta Vista",
     location: "Santiago",
-    price: "US$150,000",
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis quas libero recusandae maiores in omnis dignissimos molestiae sequi ab! Sint deserunt eum, vel perspiciatis debitis accusamus odit facere exercitationem officia. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis quas libero recusandae maiores in omnis dignissimos molestiae sequi ab! Sint deserunt eum, vel perspiciatis debitis accusamus odit facere exercitationem officia. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis quas libero recusandae maiores in omnis dignissimos molestiae sequi ab! Sint deserunt eum, vel perspiciatis debitis accusamus odit facere exercitationem officia.",
-    size: "120 m²",
-    beds: 2,
+    price: "US$115,000.00",
+    description: "Apartamento de 85 m² en moderno proyecto ecoamigable con certificado EDGE. Vive con comodidad y estilo en este hermoso apartamento de 3 habitaciones (principal con baño privado y walk-in closet), 2 baños completos, amplia sala-comedor con excelente iluminación, cocina con desayunador, área de lavado, balcón privado y 1 parqueo asignado. Ubicado en un proyecto cerrado y familiar, pensado para el bienestar y la recreación: <ul><li>Piscina para adultos y niños</li><li>Cancha deportiva</li><li>Área de juegos infantiles</li><li>Ciclovía y sendero ecológico</li><li>Gazebo y zona BBQ</li><li>Escaleras y pre-instalación para inversores/aires</li><li>Seguridad 24/7 con cámaras y control de acceso</li></ul> Un ambiente moderno, seguro y sostenible, ideal para vivir o invertir, con financiamiento disponible.",
+    size: "85 m²",
+    beds: 3,
     baths: 2,
     parking: 1,
-    lat: 19.5313773,
-    lng: -70.6793558,
-    mainImage: "https://jscoabode.com/wp-content/uploads/2021/02/NE-Street-View-scaled.jpg",
-    gallery: [
-      "https://dynamicmedia.irvinecompany.com/is/image/content/dam/apartments/3-readytopublish/communities/orangecounty/orange/gateway/photography/ICAC-GATEWAY-PHASE_II-EXT-FEB2016LAMB-002R.jpg?&crop=330,0,1281,1281&wid=1200&iccEmbed=1&icc=AdobeRGB&resMode=sharp2&fmt=pjpeg&pscan=auto",
-      "https://photos.zillowstatic.com/fp/e602993631783af05d5c292e3e82bdec-p_e.jpg",
-      "https://images1.apartments.com/i2/z-qQj9bMAAzMCOO2FhJZhZEZHXHOz_1eWYdFlSuGZCU/117/image.jpg",
-      "https://dynamicmedia.irvinecompany.com/is/image/content/dam/apartments/3-readytopublish/communities/orangecounty/orange/gateway/photography/ICAC-GATEWAY-PHASE_II-EXT-FEB2016LAMB-002R.jpg?&crop=330,0,1281,1281&wid=1200&iccEmbed=1&icc=AdobeRGB&resMode=sharp2&fmt=pjpeg&pscan=auto",
-      "https://photos.zillowstatic.com/fp/e602993631783af05d5c292e3e82bdec-p_e.jpg",
-      "https://images1.apartments.com/i2/z-qQj9bMAAzMCOO2FhJZhZEZHXHOz_1eWYdFlSuGZCU/117/image.jpg",
-      "https://dynamicmedia.irvinecompany.com/is/image/content/dam/apartments/3-readytopublish/communities/orangecounty/orange/gateway/photography/ICAC-GATEWAY-PHASE_II-EXT-FEB2016LAMB-002R.jpg?&crop=330,0,1281,1281&wid=1200&iccEmbed=1&icc=AdobeRGB&resMode=sharp2&fmt=pjpeg&pscan=auto",
-      "https://photos.zillowstatic.com/fp/e602993631783af05d5c292e3e82bdec-p_e.jpg",
-      "https://images1.apartments.com/i2/z-qQj9bMAAzMCOO2FhJZhZEZHXHOz_1eWYdFlSuGZCU/117/image.jpg",
-    ]
+    lat: 19.422730783878343,
+    lng: -70.66437937595296,
+    mainImage: "../assets/properties/residencial-quinta-vista/main-image.webp",
+    gallery: generateGallery("residencial-quinta-vista", 32)
   },
   {
     id: 2,
-    location: "Piantini",
-    title: "Local en Venta en Plaza de Piantini",
-    price: "US$275,000",
-    beds: 1,
-    baths: 1,
-    parking: 2,
-    size: "127 M²",
-    mainImage:
-      "https://galmangroup.com/wp-content/uploads/2021/12/whitney-apartments-featured-image.jpg",
-    gallery: [
-      "../assets/img/mountain-view-1.jpg",
-      "../assets/img/mountain-view-2.jpg",
-      "../assets/img/mountain-view-3.jpg",
-    ],
-    mapEmbed: '<iframe src="https://www.google.com/maps/embed?..."></iframe>',
+    title: "Residencial Rosmary V (Penhouse)",
+    location: "Santiago",
+    price: "US$430,500.00",
+    description: `
+    <p>Este proyecto cuenta con 65 apartamentos los cuales 13 son "Penthouse".</p>
+    <ul>
+      <li>🛝 Amplia y confortable área social (ROOFTOP).</li>
+      <li>🛋️ Lobby amueblado con acceso controlado.</li>
+      <li>🏊‍♂️ Piscina con terraza abierta y techada.</li>
+      <li>🏋️ Gimnasio equipado.</li>
+      <li>🏎️ Amplios parqueos.</li>
+      <li>🤌🏽 Terminación en primera.</li>
+      <li>🔐 Seguridad 24 horas.</li>
+      <li>🛗 Ascensor.</li>
+      <li>🎠 Área de juegos para niños.</li>
+      <li>📅 Salón de reuniones y conferencias.</li>
+      <li>🔋 Planta eléctrica full.</li>
+      <li>⚡️ Cerco Eléctrico.</li>
+    </ul>
+    <p><strong>Apartamentos:</strong></p>
+    <p>A, B, C, E, F, H, I, L, M</p>
+    <ul>
+      <li>Sala</li>
+      <li>Comedor/estar</li>
+      <li>Balcón</li>
+      <li>Baño de visita</li>
+      <li>Cocina</li>
+      <li>2 dormitorios + 1 baño en común</li>
+      <li>1 dormitorio + su baño + walking closet</li>
+      <li>1 dormitorio de servicio con su baño</li>
+      <li>Área de lavado</li>
+    </ul>
+    <p>D, G, J, K (No tienen habitación de servicio)</p>
+    <ul>
+      <li>Sala</li>
+      <li>Comedor/estar</li>
+      <li>Balcón</li>
+      <li>Baño de visita</li>
+      <li>Cocina</li>
+      <li>2 dormitorios + 1 baño en común</li>
+      <li>1 dormitorio + su baño + walking closet</li>
+      <li>Área de lavado</li>
+    </ul>
+  `,
+    size: "243 m²",
+    beds: 3,
+    baths: 3,
+    parking: 1,
+    lat: 19.429701933540063,
+    lng: -70.66327397116464,
+    mainImage: "../assets/properties/residencial-rosmary-v-penhouse/main-image.webp",
+    gallery: generateGallery("residencial-rosmary-v-penhouse", 14)
   },
   {
     id: 3,
-    location: "Naco",
-    title: "Apartamento Moderno con Piscina y Gimnasio",
-    price: "US$310,000",
-    beds: 3,
+    title: "Residencial Rosmary V (Apartamento)",
+    location: "Santiago",
+    price: "US$430,500.00",
+    description: `
+    <p>Este proyecto cuenta con 65 apartamentos los cuales 13 son "Penthouse".</p>
+    <ul>
+      <li>🛝 Amplia y confortable área social (ROOFTOP).</li>
+      <li>🛋️ Lobby amueblado con acceso controlado.</li>
+      <li>🏊‍♂️ Piscina con terraza abierta y techada.</li>
+      <li>🏋️ Gimnasio equipado.</li>
+      <li>🏎️ Amplios parqueos.</li>
+      <li>🤌🏽 Terminación en primera.</li>
+      <li>🔐 Seguridad 24 horas.</li>
+      <li>🛗 Ascensor.</li>
+      <li>🎠 Área de juegos para niños.</li>
+      <li>📅 Salón de reuniones y conferencias.</li>
+      <li>🔋 Planta eléctrica full.</li>
+      <li>⚡️ Cerco Eléctrico.</li>
+    </ul>
+    <p><strong>Apartamentos:</strong></p>
+    <p>A, B, C, E, F, H, I, L, M</p>
+    <ul>
+      <li>Sala</li>
+      <li>Comedor/estar</li>
+      <li>Balcón</li>
+      <li>Baño de visita</li>
+      <li>Cocina</li>
+      <li>2 dormitorios + 1 baño en común</li>
+      <li>1 dormitorio + su baño + walking closet</li>
+      <li>1 dormitorio de servicio con su baño</li>
+      <li>Área de lavado</li>
+    </ul>
+    <p>D, G, J, K (No tienen habitación de servicio)</p>
+    <ul>
+      <li>Sala</li>
+      <li>Comedor/estar</li>
+      <li>Balcón</li>
+      <li>Baño de visita</li>
+      <li>Cocina</li>
+      <li>2 dormitorios + 1 baño en común</li>
+      <li>1 dormitorio + su baño + walking closet</li>
+      <li>Área de lavado</li>
+    </ul>
+  `,
+    size: "130 m²",
+    beds: 2,
     baths: 2,
-    parking: 2,
-    size: "150 M²",
-    mainImage:
-      "https://media.equityapartments.com/images/c_crop,x_0,y_0,w_2048,h_1152/c_fill,w_2048,h_1152/q_auto,f_auto/4304-23/the-encore-apartments-pool",
-    gallery: [
-      "../assets/img/mountain-view-1.jpg",
-      "../assets/img/mountain-view-2.jpg",
-      "../assets/img/mountain-view-3.jpg",
-    ],
-    mapEmbed: '<iframe src="https://www.google.com/maps/embed?..."></iframe>',
+    parking: 1,
+    lat: 19.429701933540063,
+    lng: -70.66327397116464,
+    mainImage: "../assets/properties/residencial-rosmary-v-apartamento/main-image.webp",
+    gallery: generateGallery("residencial-rosmary-v-apartamento", 10)
   },
   {
     id: 4,
-    location: "Bella Vista",
-    title: "Penthouse de Lujo con Terraza Privada",
-    price: "US$450,000",
+    title: "Villa Moderna en Montañas",
+    location: "Santiago",
+    price: "US$570,000.00",
+    description: `
+      <p>¡VIVE EL LUJO ENTRE MONTAÑAS! Villa moderna en fase final de construcción - 372.6 m²</p>
+      <p>Descubre esta impresionante villa de 2 niveles diseñada para ofrecerte comodidad, elegancia y conexión con la naturaleza. Ideal para vivir o invertir.</p>
+      <strong>Primer Nivel:</strong>
+      <ul>
+        <li>🛋️ Sala y comedor con diseño abierto</li>
+        <li>🍽️ Cocina fría con tope en cuarzo negro</li>
+        <li>🛏️ Dormitorio con baño privado</li>
+        <li>🚻 Medio baño para visitas</li>
+        <li>🌿 Amplia terraza exterior</li>
+        <li>🧺 Área de lavado</li>
+        <li>🌳 Patio trasero</li>
+      </ul>
+      <strong>Segundo Nivel:</strong>
+      <ul>
+        <li>🛌 Dormitorio principal con baño y balcón</li>
+        <li>🛏️ 2 dormitorios secundarios</li>
+        <li>🚿 Baño común</li>
+        <li>👕 Closet de ropa blanca</li>
+        <li>🌄 Balcón común con vista panorámica</li>
+      </ul>
+      <strong>Área de Piscina:</strong>
+      <ul>
+        <li>♨️ Piscina infinita climatizada con burbujas</li>
+        <li>👶 Piscina para niños</li>
+        <li>🍗 Gazebo con cocina caliente en granito</li>
+        <li>🚿 Ducha exterior</li>
+        <li>🛠️ Cuarto de máquinas</li>
+      </ul>
+      <strong>Detalles Premium:</strong>
+      <ul>
+        <li>✅ Pisos y baños en porcelanato</li>
+        <li>✅ Cocina en madera de roble</li>
+        <li>✅ Puerta principal de 3m en roble</li>
+        <li>✅ Ventanas en aluminio C70 con vidrio reflectivo</li>
+        <li>✅ Triple altura con techo de vidrio laminado</li>
+        <li>✅ Verja perimetral en hierro y madera</li>
+        <li>✅ Cisterna de 7,500 galones</li>
+        <li>✅ 716 m² de solar</li>
+        <li>✅ 121 m² de área de piscina</li>
+      </ul>
+      <p>¡Haz de esta villa tu hogar o tu próxima inversión! Contáctame para más info y agenda tu visita hoy mismo.</p>
+    `,
+    size: "372.6 m²",
     beds: 4,
     baths: 3.5,
-    parking: 3,
-    size: "220 M²",
-    mainImage:
-      "https://jscoabode.com/wp-content/uploads/2021/02/NE-Street-View-2048x1344.jpg",
-    gallery: [
-      "../assets/img/mountain-view-1.jpg",
-      "../assets/img/mountain-view-2.jpg",
-      "../assets/img/mountain-view-3.jpg",
-    ],
-    mapEmbed: '<iframe src="https://www.google.com/maps/embed?..."></iframe>',
-  },
-  {
-    id: 5,
-    location: "Gazcue",
-    title: "Condominio Moderno con Vista al Mar",
-    price: "US$320,000",
-    beds: 2,
-    baths: 2,
     parking: 2,
-    size: "140 M²",
-    mainImage:
-      "https://www.sgl.do/upload/olimare/properties/35464c848f410e55a13bb9d78e7fddd0/apartment-cibao-santiago-gurabo-19894_full.jpg",
-    gallery: [
-      "../assets/img/mountain-view-1.jpg",
-      "../assets/img/mountain-view-2.jpg",
-      "../assets/img/mountain-view-3.jpg",
-    ],
-    mapEmbed: '<iframe src="https://www.google.com/maps/embed?..."></iframe>',
-  },
-  {
-    id: 6,
-    location: "Santo Domingo Este",
-    title: "Casa Familiar con Jardín Amplio",
-    price: "US$285,000",
-    beds: 3,
-    baths: 2,
-    parking: 3,
-    size: "180 M²",
-    mainImage:
-      "https://assets.easybroker.com/property_images/4414362/74860048/EB-PY4362.jpg?height=300&version=1715219660&width=450",
-    gallery: [
-      "../assets/img/mountain-view-1.jpg",
-      "../assets/img/mountain-view-2.jpg",
-      "../assets/img/mountain-view-3.jpg",
-    ],
-    mapEmbed: '<iframe src="https://www.google.com/maps/embed?..."></iframe>',
-  },
-  {
-    id: 7,
-    location: "Mirador Sur",
-    title: "Apartamento de Lujo con Amenidades Exclusivas",
-    price: "US$400,000",
-    beds: 3,
-    baths: 3,
-    parking: 2,
-    size: "160 M²",
-    mainImage:
-      "https://www.sgl.do/upload/olimare/properties/e6e713296627dff6475085cc6a224464/properties-3565-58940.jpeg",
-    gallery: [
-      "../assets/img/mountain-view-1.jpg",
-      "../assets/img/mountain-view-2.jpg",
-      "../assets/img/mountain-view-3.jpg",
-    ],
-    mapEmbed: '<iframe src="https://www.google.com/maps/embed?..."></iframe>',
-  },
-  {
-    id: 8,
-    location: "Los Prados",
-    title: "Penthouse Espacioso con Terraza y Vista Panorámica",
-    price: "US$480,000",
-    beds: 4,
-    baths: 4,
-    parking: 4,
-    size: "250 M²",
-    mainImage:
-      "https://www.bienesonline.com/republica-dominicana/photos/vendo-apartamento-en-valle-verde-APV174241639433259-150.jpg",
-    gallery: [
-      "../assets/img/mountain-view-1.jpg",
-      "../assets/img/mountain-view-2.jpg",
-      "../assets/img/mountain-view-3.jpg",
-    ],
-    mapEmbed: '<iframe src="https://www.google.com/maps/embed?..."></iframe>',
-  },
+    lat: 19.20671788531784,
+    lng: -70.58647335875989,
+    mainImage: "../assets/properties/villa-en-jarabacoa/main-image.webp",
+    gallery: generateGallery("villa-en-jarabacoa", 11)
+  }
 ];
