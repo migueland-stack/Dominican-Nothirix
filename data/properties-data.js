@@ -31,9 +31,9 @@ const properties = [
   },
   {
     id: 2,
-    title: "Residencial Rosmary V (Penhouse)",
+    title: "Residencial Rosmary V (Penthouse)",
     location: "Santiago",
-    price: "US$430,500.00",
+    price: "US$430,500.00 - US$546,000.00",
     description: `
     <p>Este proyecto cuenta con 65 apartamentos los cuales 13 son "Penthouse".</p>
     <ul>
@@ -88,7 +88,7 @@ const properties = [
     id: 3,
     title: "Residencial Rosmary V (Apartamento)",
     location: "Santiago",
-    price: "US$273,000.00",
+    price: "US$261,500.00 - US$303,500.00",
     description: `
     <p>Este proyecto cuenta con 65 apartamentos los cuales 13 son "Penthouse".</p>
     <ul>
