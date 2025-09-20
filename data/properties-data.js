@@ -228,5 +228,73 @@ const properties = [
     lng: -70.64743819238782,
     mainImage: "../assets/properties/residencial-residenza/main-image.webp",
     gallery: generateGallery("residencial-residenza", 8)
+  },
+  {
+    id: 6,
+    title: "Vera Condos - Residencial Exclusivo",
+    location: "Santiago",
+    price: "Desde US$112,500",
+    description: `
+  <p>Descubre <strong>Vera Condos</strong>, un espacio diseñado para quienes buscan exclusividad, elegancia y confort en una zona de gran desarrollo de Santiago de los Caballeros 🏙️. Con líneas modernas y espacios integrados, este proyecto redefine el concepto de hogar.</p>
+  
+  <strong>Amenidades del Proyecto:</strong>
+  <ul>
+    <li>Oficina administrativa</li>
+    <li>Lobby amueblado y climatizado ✨</li>
+    <li>Terrazas techadas y al aire libre 🌿</li>
+    <li> Área de BBQ 🍖</li>
+    <li>Gimnasio equipado 🏋️‍♂️</li>
+    <li>Ascensor 🚀</li>
+    <li>Planta eléctrica en áreas comunes ⚡</li>
+    <li>Sistema de gas centralizado 🔥</li>
+    <li>Circuito cerrado de vigilancia 24/7 🎥</li>
+    <li>Intercom HD 📞</li>
+  </ul>
+
+  <strong>Distribución del Apartamento:</strong>
+  <ul>
+    <li>🏡 Balcón con vista</li>
+    <li>🛋️ Sala & Comedor integrados</li>
+    <li>🍳 Cocina moderna</li>
+    <li>🧺 Área de lavado</li>
+    <li>🚿 Baño de servicio</li>
+    <li>👑 Habitación principal con baño y vestidor</li>
+    <li>🛏️ 2 habitaciones secundarias con clóset</li>
+    <li>🛁 Baño común</li>
+    <li>👕 Cuarto de ropa blanca</li>
+    <li>☀️ Área de tendedero en techo</li>
+    <li>🚗 1 parqueo privado</li>
+  </ul>
+
+  <strong>Terminaciones de Primera:</strong>
+  <ul>
+    <li>Piso en porcelanato</li>
+    <li>Cocinas modulares con tope en granito</li>
+    <li>Baños revestidos en cerámica moderna</li>
+    <li>Aire acondicionado en todas las habitaciones</li>
+    <li> Preinstalación de alarma</li>
+  </ul>
+<!--
+  <strong>Facilidades de Pago:</strong>
+  <ul>
+    <li>Separación: USD 4,000</li>
+    <li>Inicial: 30% durante construcción</li>
+    <li>Contra entrega: 70% restante</li>
+  </ul>
+
+  <p>📅 Inicio de obra: Septiembre 2022</p>
+  <p>📅 Entrega: Abril 2024</p>
+  -->
+  <p>👉 Vive en un proyecto único, exclusivo y familiar en el corazón de Santiago. ¡Tu nuevo hogar te espera! 🏡✨</p>
+`,
+    size: "80m²", // ajustar si hay información específica de tamaño
+    beds: 3,
+    baths: 2,
+    parking: 1,
+    lat: 19.484612346439288,
+    lng: -70.6529101981554,
+    mainImage: "../assets/properties/residencial-vera-condos/main-image.webp",
+    gallery: generateGallery("residencial-vera-condos", 6)
+
   }
 ];
