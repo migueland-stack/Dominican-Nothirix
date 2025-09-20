@@ -2,56 +2,56 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===== MENU TOGGLE =====
   function toggleMenu() {
     const nav = document.getElementById("nav-menu");
-    if (nav) {
-      nav.classList.toggle("show");
-    }
+    if (nav) nav.classList.toggle("show");
   }
-  window.toggleMenu = toggleMenu; // Necesario para onclick en HTML
+  window.toggleMenu = toggleMenu;
 
-  // ===== MODAL / FILTER FUNCTIONS =====
+  // ===== MODAL / FILTER ELEMENTS =====
   const abrirModal = document.getElementById("abrirModalFiltros");
   const cerrarModal = document.getElementById("cerrarModalFiltros");
   const modalFiltros = document.getElementById("modalFiltros");
   const aplicarFiltros = document.getElementById("aplicarFiltrosModal");
 
   if (abrirModal && cerrarModal && modalFiltros && aplicarFiltros) {
+    // Open modal
     abrirModal.addEventListener("click", () => {
       modalFiltros.classList.remove("oculto");
+      document.body.classList.add("modal-open");
     });
 
+    // Close modal button
     cerrarModal.addEventListener("click", () => {
       modalFiltros.classList.add("oculto");
+      document.body.classList.remove("modal-open");
     });
 
+    // Close modal by clicking outside content
     modalFiltros.addEventListener("click", (e) => {
       if (e.target.id === "modalFiltros") {
         modalFiltros.classList.add("oculto");
+        document.body.classList.remove("modal-open");
       }
     });
 
+    // ===== APPLY FILTERS =====
     aplicarFiltros.addEventListener("click", () => {
       if (typeof properties === "undefined") return;
 
       const filtros = {
         ciudad: document.getElementById("ciudadModal").value.trim(),
-        habitaciones:
-          parseInt(document.getElementById("habitacionesModal").value) || 0,
+        habitaciones: parseInt(document.getElementById("habitacionesModal").value) || 0,
         banos: parseInt(document.getElementById("banosModal").value) || 0,
         parqueos: parseInt(document.getElementById("parqueosModal").value) || 0,
-        precioMin:
-          parseInt(document.getElementById("precioMinModal").value) || 0,
-        precioMax:
-          parseInt(document.getElementById("precioMaxModal").value) || Infinity,
+        precioMin: parseInt(document.getElementById("precioMinModal").value) || 0,
+        precioMax: parseInt(document.getElementById("precioMaxModal").value) || Infinity,
       };
 
       const filtered = properties.filter((prop) => {
         const propPrice = parseInt(prop.price.replace(/[^0-9]/g, ""));
         const propBanos = parseFloat(prop.baths);
+
         return (
-          (filtros.ciudad === "" ||
-            prop.location
-              .toLowerCase()
-              .includes(filtros.ciudad.toLowerCase())) &&
+          (filtros.ciudad === "" || prop.location.toLowerCase().includes(filtros.ciudad.toLowerCase())) &&
           (filtros.habitaciones === 0 || prop.beds >= filtros.habitaciones) &&
           (filtros.banos === 0 || propBanos >= filtros.banos) &&
           (filtros.parqueos === 0 || prop.parking >= filtros.parqueos) &&
@@ -61,9 +61,34 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       renderProperties(filtered);
+
+      // Close modal after applying filters
       modalFiltros.classList.add("oculto");
+      document.body.classList.remove("modal-open");
     });
   }
+
+  // ===== NUMERIC INPUTS FIX FOR MOBILE & DESKTOP =====
+  const numericInputs = document.querySelectorAll("#precioMinModal, #precioMaxModal");
+
+  numericInputs.forEach((input) => {
+    // Ensure mobile shows numeric keyboard
+    input.setAttribute("inputmode", "numeric");
+    input.setAttribute("pattern", "[0-9]*");
+
+    // Prevent non-numeric typing
+    input.addEventListener("input", () => {
+      input.value = input.value.replace(/[^0-9]/g, "");
+    });
+
+    // Prevent pasting non-numeric content
+    input.addEventListener("paste", (e) => {
+      const pasted = (e.clipboardData || window.clipboardData).getData('text');
+      if (/[^0-9]/.test(pasted)) {
+        e.preventDefault();
+      }
+    });
+  });
 
   // ===== FOUND PROPERTIES COUNTER =====
   function updateFoundPropertiesText(count) {
@@ -103,21 +128,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ===== RENDER PROPERTIES =====
-function renderProperties(properties) {
-  const loader = document.getElementById("loader");
-  const container = document.getElementById("properties-container");
+  function renderProperties(properties) {
+    const loader = document.getElementById("loader");
+    const container = document.getElementById("properties-container");
 
-  if (!container) return;
+    if (!container) return;
 
-  // Show loader
-  loader?.classList.remove("oculto");
+    // Show loader
+    loader?.classList.remove("oculto");
 
-  // Simulate loading delay (optional)
-  setTimeout(() => {
-    container.innerHTML = "";
+    // Simulate loading delay (optional)
+    setTimeout(() => {
+      container.innerHTML = "";
 
-    if (properties.length === 0) {
-      container.innerHTML = `
+      if (properties.length === 0) {
+        container.innerHTML = `
         <div class="no-properties-message">
           <img src="../assets/img/no-propiedades.png" alt="No properties found" class="no-properties-illustration">
           <p>🏡 ¡Ups! Por el momento no hay propiedades disponibles con estos filtros.</p>
@@ -125,34 +150,34 @@ function renderProperties(properties) {
           <button class="filter-btn" onclick="window.location.href='../propiedades/index.html'">Ver todas las propiedades</button>
         </div>
       `;
-    } else {
-      properties.forEach((property) => {
-        const card = createPropertyCard(property);
+      } else {
+        properties.forEach((property) => {
+          const card = createPropertyCard(property);
 
-        // Add click handler to show loader on property card click
-        const link = card.querySelector("a.property-link");
-        if (link) {
-          link.addEventListener("click", (e) => {
-            e.preventDefault(); // prevent immediate navigation
-            loader?.classList.remove("oculto"); // show loader
+          // Add click handler to show loader on property card click
+          const link = card.querySelector("a.property-link");
+          if (link) {
+            link.addEventListener("click", (e) => {
+              e.preventDefault(); // prevent immediate navigation
+              loader?.classList.remove("oculto"); // show loader
 
-            setTimeout(() => {
-              window.location.href = link.href; // navigate after delay
-            }, 400); // optional delay for smoother transition
-          });
-        }
+              setTimeout(() => {
+                window.location.href = link.href; // navigate after delay
+              }, 400); // optional delay for smoother transition
+            });
+          }
 
-        container.appendChild(card);
-      });
-    }
+          container.appendChild(card);
+        });
+      }
 
-    lucide.createIcons();
-    updateFoundPropertiesText(properties.length);
+      lucide.createIcons();
+      updateFoundPropertiesText(properties.length);
 
-    // Hide loader
-    loader?.classList.add("oculto");
-  }, 600); // simulated delay for effect
-}
+      // Hide loader
+      loader?.classList.add("oculto");
+    }, 600); // simulated delay for effect
+  }
 
 
   if (typeof properties !== "undefined") {
