@@ -33,7 +33,7 @@ const properties = [
     id: 2,
     title: "Residencial Rosmary V (Penthouse)",
     location: "Santiago",
-    price: "US$430,500.00 - US$546,000.00",
+    price: "Desde US$430,500.00",
     description: `
     <p>Este proyecto cuenta con 65 apartamentos los cuales 13 son "Penthouse".</p>
     <ul>
@@ -88,7 +88,7 @@ const properties = [
     id: 3,
     title: "Residencial Rosmary V (Apartamento)",
     location: "Santiago",
-    price: "US$261,500.00 - US$303,500.00",
+    price: "Desde US$261,500.00",
     description: `
     <p>Este proyecto cuenta con 65 apartamentos los cuales 13 son "Penthouse".</p>
     <ul>
@@ -195,5 +195,38 @@ const properties = [
     lng: -70.58647335875989,
     mainImage: "../assets/properties/villa-en-jarabacoa/main-image.webp",
     gallery: generateGallery("villa-en-jarabacoa", 11)
+  },
+  {
+    id: 5,
+    title: "Residencial Residenza",
+    location: "Santiago",
+    price: "Desde US$95,000.00", // ajusta según rango o precio real
+    description: `
+  <p>Descubre <strong>Residenza</strong>, un residencial de diseño minimalista en una zona estratégica de Santiago, donde el confort, la elegancia y la calidez se unen para crear un espacio único para vivir 🏡.</p>
+  <p>📐 Apartamentos desde 95 m² hasta 165 m²</p>
+
+  <strong>Terminaciones de Primera:</strong>
+  <ul>
+    <li>✅ Pisos en porcelanato</li>
+    <li>✅ Cocinas modulares con tope en granito</li>
+    <li>✅ Baños modernos totalmente revestidos</li>
+    <li>✅ Barandas en cristal y acero inoxidable</li>
+    <li>✅ Ventanas de alta calidad</li>
+    <li>✅ Preinstalación de alarma y domótica incluida 🔥</li>
+  </ul>
+
+  <p>Ubicado cerca de todo lo que necesitas: Circunvalación Norte, Supermercados Bravo y Don Lindo, Plaza Amira, Los Laureles y más 🛒🏙️.</p>
+  <p>Vive la experiencia de un espacio moderno, elegante y funcional, ideal para quienes buscan invertir o disfrutar de un estilo de vida único.</p>
+  <p>Proyecto pensado para quienes buscan más que un hogar 🏠. Separa tu apartamento con US$4,000.</p>
+  <p>📲 Contáctanos hoy y asegura tu lugar en este exclusivo proyecto.</p>
+`,
+    size: "Desde 95m²",
+    beds: 3,
+    baths: 2,
+    parking: 1,
+    lat: 19.4461575003788,
+    lng: -70.64743819238782,
+    mainImage: "../assets/properties/residencial-residenza/main-image.webp",
+    gallery: generateGallery("residencial-residenza", 8)
   }
 ];
