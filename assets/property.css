@@ -193,6 +193,7 @@ body {
   border-radius: 1rem;
   overflow: hidden;
   max-width: 800px;
+  max-height: 800px;
   margin: auto;
 }
 

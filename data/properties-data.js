@@ -1,6 +1,9 @@
-function generateGallery(propertyFolder, count, extension = 'webp') {
+function generateGallery(propertyFolder, count, extension = "webp") {
   const basePath = "../assets/properties/" + propertyFolder;
-  return Array.from({ length: count }, (_, i) => `${basePath}/${i + 1}.${extension}`);
+  return Array.from(
+    { length: count },
+    (_, i) => `${basePath}/${i + 1}.${extension}`
+  );
 }
 
 const properties = [
@@ -27,7 +30,7 @@ const properties = [
     lat: 19.422730783878343,
     lng: -70.66437937595296,
     mainImage: "../assets/properties/residencial-quinta-vista/main-image.webp",
-    gallery: generateGallery("residencial-quinta-vista", 32)
+    gallery: generateGallery("residencial-quinta-vista", 32),
   },
   {
     id: 2,
@@ -81,8 +84,9 @@ const properties = [
     parking: 1,
     lat: 19.429701933540063,
     lng: -70.66327397116464,
-    mainImage: "../assets/properties/residencial-rosmary-v-penhouse/main-image.webp",
-    gallery: generateGallery("residencial-rosmary-v-penhouse", 13)
+    mainImage:
+      "../assets/properties/residencial-rosmary-v-penhouse/main-image.webp",
+    gallery: generateGallery("residencial-rosmary-v-penhouse", 13),
   },
   {
     id: 3,
@@ -136,8 +140,9 @@ const properties = [
     parking: 1,
     lat: 19.429701933540063,
     lng: -70.66327397116464,
-    mainImage: "../assets/properties/residencial-rosmary-v-apartamento/main-image.webp",
-    gallery: generateGallery("residencial-rosmary-v-apartamento", 10)
+    mainImage:
+      "../assets/properties/residencial-rosmary-v-apartamento/main-image.webp",
+    gallery: generateGallery("residencial-rosmary-v-apartamento", 10),
   },
   {
     id: 4,
@@ -194,7 +199,7 @@ const properties = [
     lat: 19.20671788531784,
     lng: -70.58647335875989,
     mainImage: "../assets/properties/villa-en-jarabacoa/main-image.webp",
-    gallery: generateGallery("villa-en-jarabacoa", 11)
+    gallery: generateGallery("villa-en-jarabacoa", 11),
   },
   {
     id: 5,
@@ -227,7 +232,7 @@ const properties = [
     lat: 19.4461575003788,
     lng: -70.64743819238782,
     mainImage: "../assets/properties/residencial-residenza/main-image.webp",
-    gallery: generateGallery("residencial-residenza", 8)
+    gallery: generateGallery("residencial-residenza", 8),
   },
   {
     id: 6,
@@ -294,15 +299,14 @@ const properties = [
     lat: 19.484612346439288,
     lng: -70.6529101981554,
     mainImage: "../assets/properties/residencial-vera-condos/main-image.webp",
-    gallery: generateGallery("residencial-vera-condos", 6)
-
+    gallery: generateGallery("residencial-vera-condos", 6),
   },
   {
-  id: 7,
-  title: "Residencial Olaya 2.0",
-  location: "Santiago",
-  price: "Desde US$216,000",
-  description: `
+    id: 7,
+    title: "Residencial Olaya 2.0",
+    location: "Santiago",
+    price: "Desde US$216,000",
+    description: `
   <p><strong>Residencial Olaya 2.0</strong> es un proyecto exclusivo y familiar que se desarrolla en un solar de <strong>351.41 m²</strong>, con tan solo <strong>4 unidades</strong>, distribuidas en un apartamento por nivel 🏡. Diseñado para ofrecer privacidad, amplitud y confort en una zona de alta valorización de <strong>Santiago de los Caballeros</strong>.</p>
 
   <p>Las unidades cuentan con áreas de construcción desde <strong>122 m² hasta 177 m²</strong>.</p>
@@ -329,13 +333,115 @@ const properties = [
 
   <p>👉 Disfruta la tranquilidad y elegancia de vivir en un proyecto exclusivo con solo 4 unidades. ¡Ideal para quienes buscan privacidad, calidad y ubicación privilegiada! 🌿</p>
   `,
-  size: "Desde 122m²",
-  beds: 3,
-  baths: 2.5,
-  parking: 2,
-  lat: 19.4548,
-  lng: -70.6972,
-  mainImage: "../assets/properties/residencial-olaya/main-image.webp",
-  gallery: generateGallery("residencial-olaya", 12)
-}
+    size: "Desde 122m²",
+    beds: 3,
+    baths: 2.5,
+    parking: 2,
+    lat: 19.4548,
+    lng: -70.6972,
+    mainImage: "../assets/properties/residencial-olaya/main-image.webp",
+    gallery: generateGallery("residencial-olaya", 12),
+  },
+  {
+    id: 8,
+    title: "Residencial Hispanoamericana - Proyecto Moderno",
+    location: "Santiago",
+    price: "Desde US$133,000",
+    description: `
+  <p>Te presento una propuesta única que <strong>redefine el estilo de vida contemporáneo</strong>, ideal para vivir con comodidad o invertir con visión en una zona estratégica de <strong>Santiago de los Caballeros</strong>. 🌆</p>
+
+  <p>📍 <strong>Ubicación:</strong> Próximo a la <strong>UAPA</strong> y a la <strong>Av. Hispanoamericana</strong>, a solo <strong>15 minutos del Aeropuerto Internacional del Cibao</strong> ✈️.</p>
+
+  <p>🏢 <strong>Edificios de 4 niveles</strong> | 🏡 <strong>Apartamentos de 105 m²</strong></p>
+
+  <strong>Distribución del Apartamento:</strong>
+  <ul>
+    <li>🛏️ 3 habitaciones</li>
+    <li>🛁 2 baños</li>
+    <li>🛋️ Sala</li>
+    <li>🍽️ Comedor</li>
+    <li>🍳 Cocina</li>
+    <li>🧺 Área de lavado</li>
+    <li>🌅 Balcón</li>
+    <li>🚗 1 parqueo</li>
+    <li>🏖️ 4to nivel con derecho a azotea</li>
+  </ul>
+
+  <strong>Amenidades Premium:</strong>
+  <ul>
+    <li>🏋️ Gimnasio equipado</li>
+    <li>🧖 Sauna</li>
+    <li>💦 Jacuzzi</li>
+    <li>🏊 Piscina</li>
+    <li>💼 Salón de conferencias</li>
+    <li>⚡ Inversor en áreas comunes</li>
+    <li>🚘 Parqueos para visitas</li>
+  </ul>
+
+  <strong>Facilidades de Pago:</strong>
+  <ul>
+    <li>💵 Reserva: US$1,000</li>
+    <li>✍️ Firma de contrato: US$4,000</li>
+    <li>🏗️ Entrega estimada: Finales 2028</li>
+    <li>💰 Cuotas aproximadas: US$700/mes</li>
+  </ul>
+
+  <p>👉 <strong>Invierte o vive en un espacio moderno, cómodo y con excelentes amenidades</strong>. ¡Agenda tu cita hoy mismo y asegura tu nueva propiedad! 📲✨</p>
+  `,
+    size: "105m²",
+    beds: 3,
+    baths: 2,
+    parking: 1,
+    lat: 19.42614266519048,
+    lng: -70.67175801777955,
+    mainImage:
+      "../assets/properties/residencial-hispanoamericana/main-image.webp",
+    gallery: generateGallery("residencial-hispanoamericana", 20),
+  },
+  {
+    id: 9,
+    title: "Casa Familiar en Los Prados - Con Penthouse",
+    location: "Santiago",
+    price: "RD$20,000,000",
+    description: `
+  <p>Descubre esta <strong>amplia y elegante casa en Los Prados</strong>, con una distribución funcional, excelentes terminaciones y un <strong>penthouse con jacuzzi y área de BBQ</strong> para disfrutar momentos únicos en familia o con amigos 🏡🔥.</p>
+
+  <p><strong>Superficie total:</strong> 264 m²</p>
+  <p><strong>Solar adicional:</strong> 132.41 m²</p>
+  <p><strong>Construcción principal:</strong> 132.55 m²</p>
+
+  <strong>Distribución de la Propiedad:</strong>
+  <ul>
+    <li>🍳 Cocina</li>
+    <li>🛋️ Sala</li>
+    <li>🍽️ Comedor</li>
+    <li>🪑 Antesala</li>
+    <li>🌅 Balcón</li>
+    <li>🏖️ Penthouse con jacuzzi y área de BBQ</li>
+    <li>🧹 Habitación de servicio</li>
+    <li>🛏️ 5 habitaciones</li>
+    <li>🛁 4 baños</li>
+    <li>🚻 Baño de visitas</li>
+    <li>🚪 Walk-in clóset en la habitación principal</li>
+    <li>🌳 Patio anexo tipo terreno</li>
+  </ul>
+
+  <strong>Características Adicionales:</strong>
+  <ul>
+    <li>💧 Cisterna</li>
+    <li>🔔 Sistema de alarma e intercom</li>
+    <li>🪟 Hierros de seguridad</li>
+  </ul>
+
+  <p>👉 Ideal para familias que buscan <strong>espacio, privacidad y comodidad</strong> en una de las zonas más tranquilas y céntricas de Santiago. ¡Tu nuevo hogar te espera! ✨</p>
+  `,
+    size: "264.96m²",
+    beds: 5,
+    baths: 4.5,
+    parking: 2,
+    lat: 19.499368763846686,
+    lng: -70.71135127103888,
+    mainImage: "../assets/properties/casa-los-prados/main-image.webp",
+    gallery: generateGallery("casa-los-prados", 12),
+  },
 ];
