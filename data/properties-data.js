@@ -82,7 +82,7 @@ const properties = [
     lat: 19.429701933540063,
     lng: -70.66327397116464,
     mainImage: "../assets/properties/residencial-rosmary-v-penhouse/main-image.webp",
-    gallery: generateGallery("residencial-rosmary-v-penhouse", 14)
+    gallery: generateGallery("residencial-rosmary-v-penhouse", 13)
   },
   {
     id: 3,
@@ -296,5 +296,46 @@ const properties = [
     mainImage: "../assets/properties/residencial-vera-condos/main-image.webp",
     gallery: generateGallery("residencial-vera-condos", 6)
 
-  }
+  },
+  {
+  id: 7,
+  title: "Residencial Olaya 2.0",
+  location: "Santiago",
+  price: "Desde US$216,000",
+  description: `
+  <p><strong>Residencial Olaya 2.0</strong> es un proyecto exclusivo y familiar que se desarrolla en un solar de <strong>351.41 m²</strong>, con tan solo <strong>4 unidades</strong>, distribuidas en un apartamento por nivel 🏡. Diseñado para ofrecer privacidad, amplitud y confort en una zona de alta valorización de <strong>Santiago de los Caballeros</strong>.</p>
+
+  <p>Las unidades cuentan con áreas de construcción desde <strong>122 m² hasta 177 m²</strong>.</p>
+  <p>📅 <strong>Fecha estimada de entrega:</strong> Enero 2026</p>
+
+  <strong>Características Generales:</strong>
+  <ul>
+    <li>Gas centralizado 🔥</li>
+    <li>Inversor en áreas comunes ⚡</li>
+    <li>Dos (2) parqueos por apartamento (descubiertos) 🚗</li>
+    <li>Control de acceso 🔐</li>
+    <li>Intercom 📞</li>
+    <li>Cámaras de seguridad en áreas comunes 🎥</li>
+    <li>Cisterna 💧</li>
+  </ul>
+
+  <strong>Características de Terminación:</strong>
+  <ul>
+    <li>Pisos y revestimientos en porcelanato importado 🏠</li>
+    <li>Cocina modular en MDF hidrófugo 🍳</li>
+    <li>Encimeras de cocina en granito natural ✨</li>
+    <li>Puertas en madera preciosa 🚪</li>
+  </ul>
+
+  <p>👉 Disfruta la tranquilidad y elegancia de vivir en un proyecto exclusivo con solo 4 unidades. ¡Ideal para quienes buscan privacidad, calidad y ubicación privilegiada! 🌿</p>
+  `,
+  size: "Desde 122m²",
+  beds: 3,
+  baths: 2.5,
+  parking: 2,
+  lat: 19.4548,
+  lng: -70.6972,
+  mainImage: "../assets/properties/residencial-olaya/main-image.webp",
+  gallery: generateGallery("residencial-olaya", 12)
+}
 ];
