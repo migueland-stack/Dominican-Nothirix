@@ -10,7 +10,7 @@ const properties = [
   {
     id: 1,
     title: "Residencial Quinta Vista",
-    location: "Santiago",
+    location: "Santiago - Venta",
     price: "US$115,000.00",
     description: `Apartamento de 85 m² en moderno proyecto ecoamigable con certificado EDGE. Vive con comodidad y estilo en este hermoso apartamento de 3 habitaciones (principal con baño privado y walk-in closet), 2 baños completos, amplia sala-comedor con excelente iluminación, cocina con desayunador, área de lavado, balcón privado y 1 parqueo asignado. Ubicado en un proyecto cerrado y familiar, pensado para el bienestar y la recreación: 
     <ul>
@@ -35,7 +35,7 @@ const properties = [
   {
     id: 2,
     title: "Residencial Rosmary V (Penthouse)",
-    location: "Santiago",
+    location: "Santiago - Venta",
     price: "Desde US$430,500.00",
     description: `
     <p>Este proyecto cuenta con 65 apartamentos los cuales 13 son "Penthouse".</p>
@@ -91,7 +91,7 @@ const properties = [
   {
     id: 3,
     title: "Residencial Rosmary V (Apartamento)",
-    location: "Santiago",
+    location: "Santiago - Venta",
     price: "Desde US$261,500.00",
     description: `
     <p>Este proyecto cuenta con 65 apartamentos los cuales 13 son "Penthouse".</p>
@@ -147,7 +147,7 @@ const properties = [
   {
     id: 4,
     title: "Villa Moderna en Montañas",
-    location: "Santiago",
+    location: "Santiago - Venta",
     price: "US$570,000.00",
     description: `
       <p>¡VIVE EL LUJO ENTRE MONTAÑAS! Villa moderna en fase final de construcción - 372.6 m²</p>
@@ -204,7 +204,7 @@ const properties = [
   {
     id: 5,
     title: "Residencial Residenza",
-    location: "Santiago",
+    location: "Santiago - Venta",
     price: "Desde US$95,000.00", // ajusta según rango o precio real
     description: `
   <p>Descubre <strong>Residenza</strong>, un residencial de diseño minimalista en una zona estratégica de Santiago, donde el confort, la elegancia y la calidez se unen para crear un espacio único para vivir 🏡.</p>
@@ -237,7 +237,7 @@ const properties = [
   {
     id: 6,
     title: "Vera Condos - Residencial Exclusivo",
-    location: "Santiago",
+    location: "Santiago - Venta",
     price: "Desde US$112,500",
     description: `
   <p>Descubre <strong>Vera Condos</strong>, un espacio diseñado para quienes buscan exclusividad, elegancia y confort en una zona de gran desarrollo de Santiago de los Caballeros 🏙️. Con líneas modernas y espacios integrados, este proyecto redefine el concepto de hogar.</p>
@@ -304,7 +304,7 @@ const properties = [
   {
     id: 7,
     title: "Residencial Olaya 2.0",
-    location: "Santiago",
+    location: "Santiago - Venta",
     price: "Desde US$216,000",
     description: `
   <p><strong>Residencial Olaya 2.0</strong> es un proyecto exclusivo y familiar que se desarrolla en un solar de <strong>351.41 m²</strong>, con tan solo <strong>4 unidades</strong>, distribuidas en un apartamento por nivel 🏡. Diseñado para ofrecer privacidad, amplitud y confort en una zona de alta valorización de <strong>Santiago de los Caballeros</strong>.</p>
@@ -345,7 +345,7 @@ const properties = [
   {
     id: 8,
     title: "Residencial Hispanoamericana - Proyecto Moderno",
-    location: "Santiago",
+    location: "Santiago - Venta",
     price: "Desde US$133,000",
     description: `
   <p>Te presento una propuesta única que <strong>redefine el estilo de vida contemporáneo</strong>, ideal para vivir con comodidad o invertir con visión en una zona estratégica de <strong>Santiago de los Caballeros</strong>. 🌆</p>
@@ -401,7 +401,7 @@ const properties = [
   {
     id: 9,
     title: "Casa Familiar en Los Prados - Con Penthouse",
-    location: "Santiago",
+    location: "Santiago - Venta",
     price: "RD$20,000,000",
     description: `
   <p>Descubre esta <strong>amplia y elegante casa en Los Prados</strong>, con una distribución funcional, excelentes terminaciones y un <strong>penthouse con jacuzzi y área de BBQ</strong> para disfrutar momentos únicos en familia o con amigos 🏡🔥.</p>
@@ -443,5 +443,324 @@ const properties = [
     lng: -70.71135127103888,
     mainImage: "../assets/properties/casa-los-prados/main-image.webp",
     gallery: generateGallery("casa-los-prados", 12),
+  },
+  {
+    id: 10,
+    title: "Apartamento en Barrio Obrero - Segundo Nivel",
+    location: "Santiago - Alquiler",
+    price: "RD$13,000 Mensual",
+    description: `
+  <p>Descubre este <strong>acogedor apartamento</strong> ubicado en la <strong>Calle Prosperidad, Casa 3, Sector Barrio Obrero</strong>, justo detrás de la Villa Olímpica. Una zona tranquila, céntrica y con fácil acceso a universidades, comercios y transporte público 🏡✨.</p>
+
+  <p><strong>Ubicación:</strong> Segundo nivel</p>
+
+  <strong>Distribución del Inmueble:</strong>
+  <ul>
+    <li>🌅 Galería amplia</li>
+    <li>🛋️ Sala–comedor con diseño abierto</li>
+    <li>🍳 Cocina funcional</li>
+    <li>🛏️ 2 habitaciones cómodas</li>
+    <li>🛁 1 baño común</li>
+    <li>🧺 Área de lavado compartida</li>
+  </ul>
+
+  <strong>Ventajas:</strong>
+  <ul>
+    <li>📍 Excelente ubicación</li>
+    <li>🔒 Zona segura y accesible</li>
+    <li>🏃 Cercanía a la Villa Olímpica y puntos de interés</li>
+  </ul>
+
+  <p>Ideal para <strong>estudiantes, jóvenes profesionales o parejas</strong> que buscan una vivienda práctica y bien ubicada en Santiago.</p>
+
+  <p>📞 Contáctanos hoy mismo para más información o agendar una visita:<br>
+  📲 809-490-7813<br>
+  <strong>Nothirix Agencia Inmobiliaria</strong> — Tu espacio ideal te espera. 🏠</p>
+  `,
+    size: "-",
+    beds: 2,
+    baths: 1,
+    parking: 0,
+    lat: 19.43155051858726,
+    lng: -70.67885133310419,
+    mainImage: "../assets/properties/barrio-obrero/main-image.webp",
+    gallery: generateGallery("barrio-obrero", 6),
+  },
+  {
+    id: 11,
+    title: "Apartamento en Breeze By Tecasa - Segundo Nivel",
+    location: "Santiago - Alquiler",
+    price: "RD$25,000 Mensual",
+    description: `
+  <p>Vive con comodidad y estilo en este hermoso <strong>apartamento en Breeze By Tecasa</strong>, ubicado en el <strong>segundo nivel</strong> de un residencial moderno con <strong>excelentes amenidades y seguridad 24 horas</strong> 🏡✨.</p>
+
+  <p><strong>Ubicación:</strong> Breeze By Tecasa, Santiago</p>
+
+  <strong>Distribución del Inmueble:</strong>
+  <ul>
+    <li>🛋️ Sala</li>
+    <li>🍴 Comedor</li>
+    <li>🧑‍🍳 Cocina</li>
+    <li>🛏️ 3 habitaciones</li>
+    <li>🚻 2 baños</li>
+    <li>🚪 Walking clóset</li>
+    <li>🧺 Área de lavado</li>
+    <li>🍃 Balcón</li>
+    <li>🚘 2 parqueos</li>
+  </ul>
+
+  <strong>Características del Residencial:</strong>
+  <ul>
+    <li>🏊‍♂️ Piscina</li>
+    <li>🏀 Cancha de basketball</li>
+    <li>🤸 Área de juegos infantiles</li>
+    <li>💪 GYM</li>
+    <li>🎉 Gacebo para actividades</li>
+    <li>🍗 Área de BBQ</li>
+    <li>🔥 Gas común</li>
+    <li>👮 Seguridad 24 horas</li>
+    <li>🎥 Cámaras de vigilancia</li>
+  </ul>
+
+  <p>Disfruta de un ambiente tranquilo, seguro y lleno de comodidades. Ideal para familias o profesionales que buscan <strong>calidad de vida y cercanía a todo</strong> lo que Santiago ofrece.</p>
+  `,
+    size: "—",
+    beds: 3,
+    baths: 2,
+    parking: 2,
+    lat: 19.476847479782066,
+    lng: -70.65567787519664,
+    mainImage: "../assets/properties/breeze-by-tecasa/main-image.webp",
+    gallery: generateGallery("breeze-by-tecasa", 17),
+  },
+  {
+    id: 12,
+    title: "Apartamento Amueblado en Torre Real IV - Gurabo",
+    location: "Santiago - Alquiler",
+    price: "RD$49,000 Mensual",
+    description: `
+  <p>Disfruta de la comodidad y el estilo de este <strong>apartamento totalmente amueblado en Torre Real IV</strong>, con mantenimiento incluido. Ubicado en <strong>Gurabo, Santiago de los Caballeros</strong>, dentro de un residencial moderno y seguro con todas las amenidades que necesitas 🏢✨.</p>
+
+  <strong>Características del Apartamento:</strong>
+  <ul>
+    <li>🛏️ 3 habitaciones (principal con baño y walking clóset)</li>
+    <li>🚻 2 baños</li>
+    <li>🛋️ Sala</li>
+    <li>🍴 Comedor</li>
+    <li>🧑‍🍳 Cocina</li>
+    <li>🧺 Área de lavado</li>
+    <li>🍃 Balcón</li>
+    <li>🚘 2 parqueos</li>
+  </ul>
+
+  <strong>Comodidades del Residencial:</strong>
+  <ul>
+    <li>🏊‍♂️ Piscina</li>
+    <li>🏋🏻‍♀️ Gimnasio</li>
+    <li>🛖 Gacebo para actividades</li>
+    <li>🍖 Área de BBQ</li>
+    <li>🏀 Cancha de basketball</li>
+    <li>🛝 Área de juegos infantiles</li>
+    <li>🛗 Elevador</li>
+    <li>👮 Seguridad 24 horas</li>
+    <li>📹 Cámaras de vigilancia</li>
+  </ul>
+
+  <p>Ideal para quienes buscan <strong>confort, seguridad y una ubicación privilegiada</strong> en Santiago. ¡Listo para mudarte y disfrutarlo desde el primer día! 🏠✨</p>
+  `,
+    size: "—",
+    beds: 3,
+    baths: 2,
+    parking: 2,
+    lat: 19.47373934104225,
+    lng: -70.66596919394847,
+    mainImage: "../assets/properties/torre-iv-amueblado/main-image.webp",
+    gallery: generateGallery("torre-iv-amueblado", 9),
+  },
+  {
+    id: 13,
+    title: "Apartamento en Residencial Los Naranjos III - Gurabo",
+    location: "Santiago - Alquiler",
+    price: "RD$23,000 Mensual", // puedes agregar el precio cuando lo tengas
+    description: `
+  <p>Encantador <strong>apartamento en alquiler</strong> ubicado en el <strong>Residencial Los Naranjos III</strong>, en la zona de Los Rieles de Gurabo, Santiago. Un espacio moderno, funcional y seguro, ideal para familias que buscan comodidad y buena ubicación 🏡✨.</p>
+
+  <p><strong>Superficie:</strong> 90 m²</p>
+
+  <strong>Distribución del Apartamento:</strong>
+  <ul>
+    <li>🛋️ Sala</li>
+    <li>🍴 Comedor</li>
+    <li>🧑‍🍳 Cocina</li>
+    <li>🛏️ 3 habitaciones</li>
+    <li>🚻 2 baños</li>
+    <li>🧺 Área de lavado</li>
+    <li>🚗 2 parqueos</li>
+  </ul>
+
+  <strong>Comodidades del Residencial:</strong>
+  <ul>
+    <li>🏊‍♀️ Piscina</li>
+    <li>👶 Área infantil</li>
+    <li>🏀 Cancha de basketball</li>
+    <li>🎉 Salón de eventos</li>
+    <li>🎥 Cámaras de seguridad</li>
+    <li>👮 Seguridad 24/7</li>
+  </ul>
+
+  <p>Vive en un entorno tranquilo y familiar, con todas las amenidades necesarias para disfrutar del confort que mereces. ¡Tu nuevo hogar en <strong>Los Rieles de Gurabo</strong> te espera! 🏠✨</p>
+  `,
+    size: "90m²",
+    beds: 3,
+    baths: 2,
+    parking: 2,
+    lat: 19.490141420945275,
+    lng: -70.64892128868988,
+    mainImage: "../assets/properties/residencial-los-naranjos-III/main-image.webp",
+    gallery: generateGallery("residencial-los-naranjos-III", 9),
+  },
+  {
+    id: 14,
+    title: "Apartamento en Treo Residencial - Próximo al HOMS",
+    location: "Santiago - Alquiler",
+    price: "RD$90,000 Mensual",
+    description: `
+  <p>Descubre el exclusivo <strong>Treo Residencial</strong>, un moderno proyecto de apartamentos ubicado próximo a la <strong>Autopista Duarte</strong>, al <strong>HOMS</strong> y a solo 5 minutos del <strong>Aeropuerto del Cibao</strong> ✈️🏢. Diseñado para ofrecer <strong>confort, elegancia y diversión</strong> sin salir de casa 🏡✨.</p>
+
+  <p><strong>Superficie del Apartamento:</strong> 115 m²</p>
+
+  <strong>Distribución del Apartamento:</strong>
+  <ul>
+    <li>🛏️ 3 habitaciones (principal con walking clóset)</li>
+    <li>🚿 2 baños</li>
+    <li>🛋️ Sala</li>
+    <li>🍽️ Comedor</li>
+    <li>🌅 Balcón</li>
+    <li>👩‍🍳 Cocina</li>
+    <li>🧺 Área de lavado</li>
+    <li>🚪 Salida de emergencia</li>
+    <li>🚗 2 parqueos + 🚙 parqueos de visita</li>
+  </ul>
+
+  <strong>Características del Proyecto:</strong>
+  <ul>
+    <li>🏊 Piscina</li>
+    <li>🏢 Área común</li>
+    <li>🛗 Ascensor</li>
+    <li>💪 Gimnasio</li>
+    <li>🎉 Gazebo para actividades</li>
+    <li>🌳 Área de recreación</li>
+    <li>🧸 Área de juegos infantiles</li>
+    <li>☀️ Sun Deck</li>
+  </ul>
+
+  <strong>Terminaciones y Seguridad:</strong>
+  <ul>
+    <li>🌳 Madera preciosa</li>
+    <li>🪵 Cerámica importada</li>
+    <li>🍳 Cocina con tope de granito</li>
+    <li>⚡ Planta eléctrica en áreas comunes</li>
+    <li>🛡️ Seguridad 24 horas</li>
+    <li>🚪 Portón eléctrico</li>
+    <li>📞 Intercom</li>
+    <li>🎥 Cámaras de seguridad</li>
+  </ul>
+
+  <p>Un proyecto pensado para quienes desean <strong>calidad, confort y ubicación privilegiada</strong> en Santiago. ¡Haz de Treo Residencial el lugar donde empiece tu nueva historia! 🌟</p>
+  `,
+    size: "115m²",
+    beds: 3,
+    baths: 2,
+    parking: 2,
+    lat: 19.430035794893207,
+    lng: -70.65024069846304,
+    mainImage: "../assets/properties/treo-residencial/main-image.webp",
+    gallery: generateGallery("treo-residencial", 17),
+  },
+  {
+    id: 15,
+    title: "Apartamento en Verdana Deluxes - Tercer Nivel",
+    location: "Santiago - Alquiler",
+    price: "RD$30,000 Mensual",
+    description: `
+  <p>Vive con estilo en este <strong>amplio apartamento en Verdana Deluxes</strong>, ubicado en el <strong>tercer nivel</strong> de un residencial moderno, seguro y con excelente ubicación en Santiago 🏡✨.</p>
+
+  <p><strong>Superficie:</strong> 198 m²</p>
+
+  <strong>Distribución del Apartamento:</strong>
+  <ul>
+    <li>🛋️ Sala</li>
+    <li>🍴 Comedor</li>
+    <li>🧑‍🍳 Cocina</li>
+    <li>🛏️ 3 habitaciones</li>
+    <li>🚻 2.5 baños</li>
+    <li>🚪 Walking clóset</li>
+    <li>🧺 Área de lavado</li>
+    <li>🧹 Cuarto de servicio</li>
+    <li>🍃 Balcón espacioso</li>
+    <li>🚘 2 parqueos</li>
+  </ul>
+
+  <strong>Características del Residencial:</strong>
+  <ul>
+    <li>👮 Seguridad 24 horas</li>
+    <li>🎥 Cámaras de vigilancia</li>
+    <li>🚪 Portón eléctrico</li>
+  </ul>
+
+  <p>Este apartamento ofrece <strong>espacios amplios, elegantes y bien distribuidos</strong>, ideales para quienes buscan confort, privacidad y tranquilidad en una de las zonas más exclusivas de Santiago 🌆.</p>
+  `,
+    size: "198m²",
+    beds: 3,
+    baths: 2.5,
+    parking: 2,
+    lat: 19.42501749887288,
+    lng: -70.65019683102048,
+    mainImage: "../assets/properties/verdana-deluxes/main-image.webp",
+    gallery: generateGallery("verdana-deluxes", 9),
+  },
+  {
+    id: 16,
+    title: "Apartamento en Torre Real VIII - Los Álamos",
+    location: "Santiago - Alquiler",
+    price: "RD$38,000",
+    description: `
+  <p>Disfruta de la elegancia y confort de este <strong>apartamento en Torre Real VIII</strong>, ubicado en <strong>Los Álamos</strong>, Santiago. Un residencial moderno, seguro y con excelentes amenidades para toda la familia 🏢✨.</p>
+
+  <p><strong>Nivel:</strong> 1er piso</p>
+
+  <strong>Distribución del Apartamento:</strong>
+  <ul>
+    <li>👩‍🍳 Cocina moderna y funcional</li>
+    <li>🛋️ Sala</li>
+    <li>🧺 Área de lavado</li>
+    <li>🌅 Balcón</li>
+    <li>🛏️ 1 habitación principal con baño y walk-in clóset</li>
+    <li>🛏️ 2 habitaciones secundarias con clóset</li>
+    <li>🚿 Baño común</li>
+    <li>🅿️ 2 parqueos</li>
+  </ul>
+
+  <strong>Amenidades del Proyecto:</strong>
+  <ul>
+    <li>🏊 Piscina</li>
+    <li>🎉 Área social para eventos o reuniones</li>
+    <li>💪 Gimnasio equipado</li>
+    <li>👧 Área infantil</li>
+    <li>💦 Calentador</li>
+    <li>🛗 Ascensor en cada torre</li>
+    <li>🛡️ Seguridad 24/7</li>
+  </ul>
+
+  <p>Un espacio ideal para quienes buscan <strong>comodidad, seguridad y un ambiente familiar</strong> en una de las zonas más exclusivas de Santiago. ¡Tu nuevo hogar te espera en Torre Real VIII – Los Álamos! 🏡💫</p>
+  `,
+    size: "—",
+    beds: 3,
+    baths: 2,
+    parking: 2,
+    lat: 19.4313057579927,
+    lng: -70.6652846048258,
+    mainImage: "../assets/properties/torre-real-VIII-los-alamos/main-image.webp",
+    gallery: generateGallery("torre-real-VIII-los-alamos", 21),
   },
 ];
