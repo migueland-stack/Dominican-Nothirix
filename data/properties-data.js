@@ -574,8 +574,8 @@ const properties = [
     parking: 2,
     lat: 19.47373934104225,
     lng: -70.66596919394847,
-    mainImage: "../assets/properties/torre-iv-amueblado/main-image.webp",
-    gallery: generateGallery("torre-iv-amueblado", 9),
+    mainImage: "../assets/properties/torre-IV-amueblado/main-image.webp",
+    gallery: generateGallery("torre-IV-amueblado", 9),
   },
   {
     id: 13,
