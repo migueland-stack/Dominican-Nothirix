@@ -535,7 +535,7 @@ const properties = [
   },
   {
     id: 12,
-    title: "Apartamento Amueblado en Torre Real IV - Gurabo",
+    title: "Apartamento Amueblado en Torre Real IV",
     location: "Santiago - Alquiler",
     price: "RD$49,000 Mensual",
     description: `
@@ -579,9 +579,9 @@ const properties = [
   },
   {
     id: 13,
-    title: "Apartamento en Residencial Los Naranjos III - Gurabo",
+    title: "Apartamento en Residencial Los Naranjos III",
     location: "Santiago - Alquiler",
-    price: "RD$23,000 Mensual", // puedes agregar el precio cuando lo tengas
+    price: "RD$23,000 Mensual",
     description: `
   <p>Encantador <strong>apartamento en alquiler</strong> ubicado en el <strong>Residencial Los Naranjos III</strong>, en la zona de Los Rieles de Gurabo, Santiago. Un espacio moderno, funcional y seguro, ideal para familias que buscan comodidad y buena ubicación 🏡✨.</p>
 
@@ -616,8 +616,8 @@ const properties = [
     parking: 2,
     lat: 19.490141420945275,
     lng: -70.64892128868988,
-    mainImage: "../assets/properties/residencial-los-naranjos-III/main-image.webp",
-    gallery: generateGallery("residencial-los-naranjos-III", 9),
+    mainImage: "../assets/properties/residencial-los-naranjos-iii/main-image.webp",
+    gallery: generateGallery("residencial-los-naranjos-iii", 9),
   },
   {
     id: 14,
@@ -760,7 +760,7 @@ const properties = [
     parking: 2,
     lat: 19.4313057579927,
     lng: -70.6652846048258,
-    mainImage: "../assets/properties/torre-real-VIII-los-alamos/main-image.webp",
-    gallery: generateGallery("torre-real-VIII-los-alamos", 21),
+    mainImage: "../assets/properties/torre-real-viii-los-alamos/main-image.webp",
+    gallery: generateGallery("torre-real-viii-los-alamos", 21),
   },
 ];
