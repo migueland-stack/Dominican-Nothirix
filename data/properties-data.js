@@ -616,8 +616,8 @@ const properties = [
     parking: 2,
     lat: 19.490141420945275,
     lng: -70.64892128868988,
-    mainImage: "../assets/properties/residencial-los-naranjos-iii/main-image.webp",
-    gallery: generateGallery("residencial-los-naranjos-iii", 9),
+    mainImage: "../assets/properties/residencial-los-naranjos-III/main-image.webp",
+    gallery: generateGallery("residencial-los-naranjos-III", 9),
   },
   {
     id: 14,
@@ -760,7 +760,7 @@ const properties = [
     parking: 2,
     lat: 19.4313057579927,
     lng: -70.6652846048258,
-    mainImage: "../assets/properties/torre-real-viii-los-alamos/main-image.webp",
-    gallery: generateGallery("torre-real-viii-los-alamos", 21),
+    mainImage: "../assets/properties/torre-real-VIII-los-alamos/main-image.webp",
+    gallery: generateGallery("torre-real-VIII-los-alamos", 21),
   },
 ];
