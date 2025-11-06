@@ -91,12 +91,11 @@ body {
   font-weight: bold;
   opacity: 0.7;
   transition: opacity 0.3s ease;
-
 }
 
 .nav-links a:hover {
   opacity: 1;
-  color: var(--primary-yellow)
+  color: var(--primary-yellow);
 }
 
 .logo-container {
@@ -113,7 +112,7 @@ body {
   width: 150px;
   overflow: hidden;
   background-color: #25d366;
-  color: #FFF;
+  color: #fff;
   border-radius: 4px 0 0 4px;
   z-index: 10;
   transition: all 0.5s ease-in-out;
@@ -140,7 +139,7 @@ body {
 }
 
 .whats-float:hover {
-  color: #FFFFFF;
+  color: #ffffff;
   transform: translate(0px, 0px);
 }
 
@@ -180,17 +179,15 @@ body {
   opacity: 1;
 }
 
-
 .property-container {
   margin: 80px auto 0 auto;
   max-width: 800px;
 }
 
-
 .image-layout {
   display: flex;
   gap: 0.5rem;
-  border-radius: 1rem;
+  border-radius: 0 0 1rem 1rem;
   overflow: hidden;
   max-width: 800px;
   max-height: 800px;
@@ -312,7 +309,7 @@ body {
   background-color: #0f2f2d;
   color: var(--light-gray);
   padding: 60px 40px 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .footer-container {
@@ -545,6 +542,17 @@ body {
   transform: scale(1.02);
 }
 
+.property-status {
+  font-size: 32px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  background-color: #004944;
+  color: var(--accent-white);
+  border-radius: 35px 35px 0 0;
+  padding: 8px;
+}
+
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -581,8 +589,12 @@ body {
     margin-top: 1rem;
   }
 
+  .property-status {
+    margin: 0px 10px;
+  }
+
   .image-layout {
-    margin: 5px 20px;
+    margin: 0px 10px;
   }
 
   .description-section {
@@ -633,7 +645,6 @@ body {
     font-size: 12px;
     padding: 6px 12px;
   }
-
 }
 
 @media (max-width: 480px) {

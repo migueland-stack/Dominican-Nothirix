@@ -10,7 +10,8 @@ const properties = [
   {
     id: 1,
     title: "Residencial Quinta Vista",
-    location: "Santiago - Venta",
+    location: "Santiago",
+    status: ["venta"],
     price: "US$115,000.00",
     description: `Apartamento de 85 m² en moderno proyecto ecoamigable con certificado EDGE. Vive con comodidad y estilo en este hermoso apartamento de 3 habitaciones (principal con baño privado y walk-in closet), 2 baños completos, amplia sala-comedor con excelente iluminación, cocina con desayunador, área de lavado, balcón privado y 1 parqueo asignado. Ubicado en un proyecto cerrado y familiar, pensado para el bienestar y la recreación: 
     <ul>
@@ -35,7 +36,8 @@ const properties = [
   {
     id: 2,
     title: "Residencial Rosmary V (Penthouse)",
-    location: "Santiago - Venta",
+    location: "Santiago",
+    status: ["venta"],
     price: "Desde US$430,500.00",
     description: `
     <p>Este proyecto cuenta con 65 apartamentos los cuales 13 son "Penthouse".</p>
@@ -91,7 +93,8 @@ const properties = [
   {
     id: 3,
     title: "Residencial Rosmary V (Apartamento)",
-    location: "Santiago - Venta",
+    location: "Santiago",
+    status: ["venta"],
     price: "Desde US$261,500.00",
     description: `
     <p>Este proyecto cuenta con 65 apartamentos los cuales 13 son "Penthouse".</p>
@@ -147,7 +150,8 @@ const properties = [
   {
     id: 4,
     title: "Villa Moderna en Montañas",
-    location: "Santiago - Venta",
+    location: "Santiago",
+    status: ["venta"],
     price: "US$570,000.00",
     description: `
       <p>¡VIVE EL LUJO ENTRE MONTAÑAS! Villa moderna en fase final de construcción - 372.6 m²</p>
@@ -204,8 +208,9 @@ const properties = [
   {
     id: 5,
     title: "Residencial Residenza",
-    location: "Santiago - Venta",
-    price: "Desde US$95,000.00", // ajusta según rango o precio real
+    location: "Santiago",
+    status: ["venta"],
+    price: "Desde US$95,000.00",
     description: `
   <p>Descubre <strong>Residenza</strong>, un residencial de diseño minimalista en una zona estratégica de Santiago, donde el confort, la elegancia y la calidez se unen para crear un espacio único para vivir 🏡.</p>
   <p>📐 Apartamentos desde 95 m² hasta 165 m²</p>
@@ -237,7 +242,8 @@ const properties = [
   {
     id: 6,
     title: "Vera Condos - Residencial Exclusivo",
-    location: "Santiago - Venta",
+    location: "Santiago",
+    status: ["venta"],
     price: "Desde US$112,500",
     description: `
   <p>Descubre <strong>Vera Condos</strong>, un espacio diseñado para quienes buscan exclusividad, elegancia y confort en una zona de gran desarrollo de Santiago de los Caballeros 🏙️. Con líneas modernas y espacios integrados, este proyecto redefine el concepto de hogar.</p>
@@ -304,7 +310,8 @@ const properties = [
   {
     id: 7,
     title: "Residencial Olaya 2.0",
-    location: "Santiago - Venta",
+    location: "Santiago",
+    status: ["venta"],
     price: "Desde US$216,000",
     description: `
   <p><strong>Residencial Olaya 2.0</strong> es un proyecto exclusivo y familiar que se desarrolla en un solar de <strong>351.41 m²</strong>, con tan solo <strong>4 unidades</strong>, distribuidas en un apartamento por nivel 🏡. Diseñado para ofrecer privacidad, amplitud y confort en una zona de alta valorización de <strong>Santiago de los Caballeros</strong>.</p>
@@ -345,7 +352,8 @@ const properties = [
   {
     id: 8,
     title: "Residencial Hispanoamericana - Proyecto Moderno",
-    location: "Santiago - Venta",
+    location: "Santiago",
+    status: ["venta"],
     price: "Desde US$133,000",
     description: `
   <p>Te presento una propuesta única que <strong>redefine el estilo de vida contemporáneo</strong>, ideal para vivir con comodidad o invertir con visión en una zona estratégica de <strong>Santiago de los Caballeros</strong>. 🌆</p>
@@ -401,7 +409,8 @@ const properties = [
   {
     id: 9,
     title: "Casa Familiar en Los Prados - Con Penthouse",
-    location: "Santiago - Venta",
+    location: "Santiago",
+    status: ["venta"],
     price: "RD$20,000,000",
     description: `
   <p>Descubre esta <strong>amplia y elegante casa en Los Prados</strong>, con una distribución funcional, excelentes terminaciones y un <strong>penthouse con jacuzzi y área de BBQ</strong> para disfrutar momentos únicos en familia o con amigos 🏡🔥.</p>
@@ -444,10 +453,11 @@ const properties = [
     mainImage: "../assets/properties/casa-los-prados/main-image.webp",
     gallery: generateGallery("casa-los-prados", 12),
   },
-  {
+  /* {
     id: 10,
     title: "Apartamento en Barrio Obrero - Segundo Nivel",
-    location: "Santiago - Alquiler",
+    location: "Santiago",
+    status: ["alquiler"],
     price: "RD$13,000 Mensual",
     description: `
   <p>Descubre este <strong>acogedor apartamento</strong> ubicado en la <strong>Calle Prosperidad, Casa 3, Sector Barrio Obrero</strong>, justo detrás de la Villa Olímpica. Una zona tranquila, céntrica y con fácil acceso a universidades, comercios y transporte público 🏡✨.</p>
@@ -485,11 +495,12 @@ const properties = [
     lng: -70.67885133310419,
     mainImage: "../assets/properties/barrio-obrero/main-image.webp",
     gallery: generateGallery("barrio-obrero", 6),
-  },
+  },*/
   {
     id: 11,
     title: "Apartamento en Breeze By Tecasa - Segundo Nivel",
-    location: "Santiago - Alquiler",
+    location: "Santiago",
+    status: ["alquiler"],
     price: "RD$25,000 Mensual",
     description: `
   <p>Vive con comodidad y estilo en este hermoso <strong>apartamento en Breeze By Tecasa</strong>, ubicado en el <strong>segundo nivel</strong> de un residencial moderno con <strong>excelentes amenidades y seguridad 24 horas</strong> 🏡✨.</p>
@@ -536,7 +547,8 @@ const properties = [
   {
     id: 12,
     title: "Apartamento Amueblado en Torre Real IV",
-    location: "Santiago - Alquiler",
+    location: "Santiago",
+    status: ["alquiler"],
     price: "RD$49,000 Mensual",
     description: `
   <p>Disfruta de la comodidad y el estilo de este <strong>apartamento totalmente amueblado en Torre Real IV</strong>, con mantenimiento incluido. Ubicado en <strong>Gurabo, Santiago de los Caballeros</strong>, dentro de un residencial moderno y seguro con todas las amenidades que necesitas 🏢✨.</p>
@@ -580,7 +592,8 @@ const properties = [
   {
     id: 13,
     title: "Apartamento en Residencial Los Naranjos III",
-    location: "Santiago - Alquiler",
+    location: "Santiago",
+    status: ["alquiler"],
     price: "RD$23,000 Mensual",
     description: `
   <p>Encantador <strong>apartamento en alquiler</strong> ubicado en el <strong>Residencial Los Naranjos III</strong>, en la zona de Los Rieles de Gurabo, Santiago. Un espacio moderno, funcional y seguro, ideal para familias que buscan comodidad y buena ubicación 🏡✨.</p>
@@ -616,13 +629,15 @@ const properties = [
     parking: 2,
     lat: 19.490141420945275,
     lng: -70.64892128868988,
-    mainImage: "../assets/properties/residencial-los-naranjos-III/main-image.webp",
+    mainImage:
+      "../assets/properties/residencial-los-naranjos-III/main-image.webp",
     gallery: generateGallery("residencial-los-naranjos-III", 9),
   },
   {
     id: 14,
     title: "Apartamento en Treo Residencial - Próximo al HOMS",
-    location: "Santiago - Alquiler",
+    location: "Santiago",
+    status: ["alquiler"],
     price: "RD$90,000 Mensual",
     description: `
   <p>Descubre el exclusivo <strong>Treo Residencial</strong>, un moderno proyecto de apartamentos ubicado próximo a la <strong>Autopista Duarte</strong>, al <strong>HOMS</strong> y a solo 5 minutos del <strong>Aeropuerto del Cibao</strong> ✈️🏢. Diseñado para ofrecer <strong>confort, elegancia y diversión</strong> sin salir de casa 🏡✨.</p>
@@ -680,7 +695,8 @@ const properties = [
   {
     id: 15,
     title: "Apartamento en Verdana Deluxes - Tercer Nivel",
-    location: "Santiago - Alquiler",
+    location: "Santiago",
+    status: ["alquiler"],
     price: "RD$30,000 Mensual",
     description: `
   <p>Vive con estilo en este <strong>amplio apartamento en Verdana Deluxes</strong>, ubicado en el <strong>tercer nivel</strong> de un residencial moderno, seguro y con excelente ubicación en Santiago 🏡✨.</p>
@@ -722,7 +738,8 @@ const properties = [
   {
     id: 16,
     title: "Apartamento en Torre Real VIII - Los Álamos",
-    location: "Santiago - Alquiler",
+    location: "Santiago",
+    status: ["alquiler"],
     price: "RD$38,000",
     description: `
   <p>Disfruta de la elegancia y confort de este <strong>apartamento en Torre Real VIII</strong>, ubicado en <strong>Los Álamos</strong>, Santiago. Un residencial moderno, seguro y con excelentes amenidades para toda la familia 🏢✨.</p>
@@ -760,7 +777,8 @@ const properties = [
     parking: 2,
     lat: 19.4313057579927,
     lng: -70.6652846048258,
-    mainImage: "../assets/properties/torre-real-VIII-los-alamos/main-image.webp",
+    mainImage:
+      "../assets/properties/torre-real-VIII-los-alamos/main-image.webp",
     gallery: generateGallery("torre-real-VIII-los-alamos", 21),
   },
 ];

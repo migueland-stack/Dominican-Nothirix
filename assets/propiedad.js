@@ -25,27 +25,27 @@ function initImageModal() {
   // Close modal functions
   const closeModal = () => {
     modal.classList.add("hidden");
-    document.body.style.overflow = '';
+    document.body.style.overflow = "";
   };
 
   // Event listeners for closing modal
-  modalClose.addEventListener('click', closeModal);
+  modalClose.addEventListener("click", closeModal);
 
-  modal.addEventListener('click', (e) => {
+  modal.addEventListener("click", (e) => {
     if (e.target === modal) closeModal();
   });
 
   // Keyboard navigation
-  document.addEventListener('keydown', (e) => {
-    if (!modal.classList.contains('hidden')) {
+  document.addEventListener("keydown", (e) => {
+    if (!modal.classList.contains("hidden")) {
       switch (e.key) {
-        case 'Escape':
+        case "Escape":
           closeModal();
           break;
-        case 'ArrowLeft':
+        case "ArrowLeft":
           navigateImage(-1);
           break;
-        case 'ArrowRight':
+        case "ArrowRight":
           navigateImage(1);
           break;
       }
@@ -73,8 +73,8 @@ function initImageModal() {
   }
 
   // Navigation button event listeners
-  prevBtn.addEventListener('click', () => navigateImage(-1));
-  nextBtn.addEventListener('click', () => navigateImage(1));
+  prevBtn.addEventListener("click", () => navigateImage(-1));
+  nextBtn.addEventListener("click", () => navigateImage(1));
 
   // Open modal function - make it global
   window.openImageModal = function (imageSrc) {
@@ -85,7 +85,7 @@ function initImageModal() {
 
     updateImage();
     modal.classList.remove("hidden");
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   };
 }
 
@@ -130,9 +130,23 @@ window.addEventListener("load", () => {
   }
 
   // Limit gallery images to first 4 for display only
-  const displayGallery = property.gallery && property.gallery.length > 0
-    ? property.gallery.slice(0, 3)
-    : [];
+  const displayGallery =
+    property.gallery && property.gallery.length > 0
+      ? property.gallery.slice(0, 3)
+      : [];
+
+  // Determinar el texto del status
+  let statusText = "";
+  if (
+    property.status.includes("venta") &&
+    property.status.includes("alquiler")
+  ) {
+    statusText = "se vende o se alquila";
+  } else if (property.status.includes("venta")) {
+    statusText = "se vende";
+  } else if (property.status.includes("alquiler")) {
+    statusText = "se alquila";
+  }
 
   const propInfo = document.getElementById("prop-info");
   propInfo.innerHTML = `
@@ -146,25 +160,38 @@ window.addEventListener("load", () => {
           <div class="back-link">
         <a href="../propiedades/index.html">Volver a propiedades</a>
       </div>
+      ${
+        statusText
+          ? `<section class="property-status">${statusText}</section>`
+          : ""
+      }
       <div class="image-layout">
         <div class="main-image">
-          <img src="${property.mainImage}" alt="${property.title}" class="main-prop-img" />
+          <img src="${property.mainImage}" alt="${
+    property.title
+  }" class="main-prop-img" />
         </div>
         <div class="side-images">
-          ${displayGallery.length > 0
-      ? displayGallery
-        .map(
-          (img, i) => `
-                <img src="${img}" alt="${property.title} - Imagen ${i + 1}" class="prop-gallery-img" />
+          ${
+            displayGallery.length > 0
+              ? displayGallery
+                  .map(
+                    (img, i) => `
+                <img src="${img}" alt="${property.title} - Imagen ${
+                      i + 1
+                    }" class="prop-gallery-img" />
               `
-        )
-        .join("")
-      : '<p>No hay imágenes adicionales disponibles</p>'
-    }
-          ${property.gallery && property.gallery.length > 4
-      ? `<div class="more-images-indicator">+${property.gallery.length - 4} más</div>`
-      : ''
-    }
+                  )
+                  .join("")
+              : "<p>No hay imágenes adicionales disponibles</p>"
+          }
+          ${
+            property.gallery && property.gallery.length > 4
+              ? `<div class="more-images-indicator">+${
+                  property.gallery.length - 4
+                } más</div>`
+              : ""
+          }
         </div>
       </div>
 
@@ -174,22 +201,46 @@ window.addEventListener("load", () => {
           <h1 class="property-title">${property.title}</h1>
         </div>
         <div class="features">
+          ${
+            property.beds
+              ? `
           <div class="property-el">
             <img src="../assets/img/bed-double.svg" alt="Habitaciones" />
             <span>${property.beds} Habs.</span>
           </div>
+          `
+              : ""
+          }
+          ${
+            property.baths
+              ? `
           <div class="property-el">
             <img src="../assets/img/bath.svg" alt="Baño" />
             <span>${property.baths} Baño${property.baths > 1 ? "s" : ""}</span>
           </div>
+          `
+              : ""
+          }
+          ${
+            property.parking
+              ? `
           <div class="property-el">
             <img src="../assets/img/car.svg" alt="Parqueo" />
             <span>${property.parking} Parq.</span>
           </div>
+          `
+              : ""
+          }
+          ${
+            property.size && property.size !== "-" && property.size !== ""
+              ? `
           <div class="property-el">
             <img src="../assets/img/ruler-dimension-line.svg" alt="Metros" />
             <span>${property.size}</span>
           </div>
+          `
+              : ""
+          }
         </div>
       </section>
 
@@ -216,7 +267,7 @@ window.addEventListener("load", () => {
   }, 100);
 
   // Initialize map if OpenLayers is available
-  if (typeof ol !== 'undefined' && property.lat && property.lng) {
+  if (typeof ol !== "undefined" && property.lat && property.lng) {
     try {
       // Convert coords lat/lng to EPSG:3857
       const coords = ol.proj.fromLonLat([property.lng, property.lat]);
