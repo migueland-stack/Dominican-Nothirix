@@ -39,19 +39,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const filtros = {
         ciudad: document.getElementById("ciudadModal").value.trim(),
-        habitaciones: parseInt(document.getElementById("habitacionesModal").value) || 0,
+        habitaciones:
+          parseInt(document.getElementById("habitacionesModal").value) || 0,
         banos: parseInt(document.getElementById("banosModal").value) || 0,
         parqueos: parseInt(document.getElementById("parqueosModal").value) || 0,
-        precioMin: parseInt(document.getElementById("precioMinModal").value) || 0,
-        precioMax: parseInt(document.getElementById("precioMaxModal").value) || Infinity,
+        precioMin:
+          parseInt(document.getElementById("precioMinModal").value) || 0,
+        precioMax:
+          parseInt(document.getElementById("precioMaxModal").value) || Infinity,
+        tipoTransaccion: document.getElementById("tipoTransaccionModal").value, // Nuevo filtro
       };
 
       const filtered = properties.filter((prop) => {
         const propPrice = parseInt(prop.price.replace(/[^0-9]/g, ""));
         const propBanos = parseFloat(prop.baths);
 
+        // Filtro por tipo de transacción
+        let transaccionMatch = true;
+        if (filtros.tipoTransaccion === "venta") {
+          transaccionMatch = prop.status.includes("venta");
+        } else if (filtros.tipoTransaccion === "alquiler") {
+          transaccionMatch = prop.status.includes("alquiler");
+        } else if (filtros.tipoTransaccion === "ambos") {
+          transaccionMatch =
+            prop.status.includes("venta") && prop.status.includes("alquiler");
+        } // para "all" no se aplica filtro
+
         return (
-          (filtros.ciudad === "" || prop.location.toLowerCase().includes(filtros.ciudad.toLowerCase())) &&
+          transaccionMatch &&
+          (filtros.ciudad === "" ||
+            prop.location
+              .toLowerCase()
+              .includes(filtros.ciudad.toLowerCase())) &&
           (filtros.habitaciones === 0 || prop.beds >= filtros.habitaciones) &&
           (filtros.banos === 0 || propBanos >= filtros.banos) &&
           (filtros.parqueos === 0 || prop.parking >= filtros.parqueos) &&
@@ -69,7 +88,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ===== NUMERIC INPUTS FIX FOR MOBILE & DESKTOP =====
-  const numericInputs = document.querySelectorAll("#precioMinModal, #precioMaxModal");
+  const numericInputs = document.querySelectorAll(
+    "#precioMinModal, #precioMaxModal"
+  );
 
   numericInputs.forEach((input) => {
     // Ensure mobile shows numeric keyboard
@@ -83,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Prevent pasting non-numeric content
     input.addEventListener("paste", (e) => {
-      const pasted = (e.clipboardData || window.clipboardData).getData('text');
+      const pasted = (e.clipboardData || window.clipboardData).getData("text");
       if (/[^0-9]/.test(pasted)) {
         e.preventDefault();
       }
@@ -104,13 +125,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-// ===== CREATE PROPERTY CARD =====
-function createPropertyCard(property) {
-  const card = document.createElement("div");
-  card.className = "property-card";
-  card.innerHTML = `
+  // ===== CREATE PROPERTY CARD =====
+  function createPropertyCard(property) {
+    const card = document.createElement("div");
+    card.className = "property-card";
+    card.innerHTML = `
     <a href="property.html?prop=${property.id}" class="property-link">
-      <img src="${property.mainImage}" alt="${property.title}" class="property-image">
+      <img src="${property.mainImage}" alt="${
+      property.title
+    }" class="property-image">
       <div class="property-content">
         <span class="property-location">${property.location}</span>
         <h3 class="property-title">${property.title}</h3>
@@ -118,14 +141,22 @@ function createPropertyCard(property) {
         <div class="property-details">
           <span><i data-lucide="bed"></i> ${property.beds}</span>
           <span><i data-lucide="bath"></i> ${property.baths}</span>
-          ${property.parking ? `<span><i data-lucide="car"></i> ${property.parking}</span>` : ''}
-          ${property.size && property.size !== "-" && property.size !== "" ? `<span><i data-lucide="ruler"></i> ${property.size}</span>` : ''}
+          ${
+            property.parking
+              ? `<span><i data-lucide="car"></i> ${property.parking}</span>`
+              : ""
+          }
+          ${
+            property.size && property.size !== "-" && property.size !== ""
+              ? `<span><i data-lucide="ruler"></i> ${property.size}</span>`
+              : ""
+          }
         </div>
       </div>
     </a>
   `;
-  return card;
-}
+    return card;
+  }
   // ===== RENDER PROPERTIES =====
   function renderProperties(properties) {
     const loader = document.getElementById("loader");
@@ -177,7 +208,6 @@ function createPropertyCard(property) {
       loader?.classList.add("oculto");
     }, 600); // simulated delay for effect
   }
-
 
   if (typeof properties !== "undefined") {
     renderProperties(properties);

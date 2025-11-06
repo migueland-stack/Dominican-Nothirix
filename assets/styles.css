@@ -570,6 +570,7 @@ textarea::placeholder {
 .no-properties-message {
   font-size: 20px;
   text-align: center;
+  margin-bottom: 25px;
 }
 
 .no-properties-illustration {
