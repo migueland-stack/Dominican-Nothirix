@@ -740,7 +740,7 @@ const properties = [
     title: "Apartamento en Torre Real VIII - Los Álamos",
     location: "Santiago",
     status: ["alquiler"],
-    price: "RD$38,000",
+    price: "RD$38,000 Mensual",
     description: `
   <p>Disfruta de la elegancia y confort de este <strong>apartamento en Torre Real VIII</strong>, ubicado en <strong>Los Álamos</strong>, Santiago. Un residencial moderno, seguro y con excelentes amenidades para toda la familia 🏢✨.</p>
 
