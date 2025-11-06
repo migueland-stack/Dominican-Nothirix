@@ -347,7 +347,7 @@ const properties = [
     lat: 19.4548,
     lng: -70.6972,
     mainImage: "../assets/properties/residencial-olaya/main-image.webp",
-    gallery: generateGallery("residencial-olaya", 12),
+    gallery: generateGallery("residencial-olaya", 9),
   },
   {
     id: 8,
