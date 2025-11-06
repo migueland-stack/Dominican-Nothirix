@@ -487,7 +487,7 @@ const properties = [
   📲 809-490-7813<br>
   <strong>Nothirix Agencia Inmobiliaria</strong> — Tu espacio ideal te espera. 🏠</p>
   `,
-    size: "-",
+    size: "",
     beds: 2,
     baths: 1,
     parking: 0,
@@ -535,7 +535,7 @@ const properties = [
 
   <p>Disfruta de un ambiente tranquilo, seguro y lleno de comodidades. Ideal para familias o profesionales que buscan <strong>calidad de vida y cercanía a todo</strong> lo que Santiago ofrece.</p>
   `,
-    size: "—",
+    size: "",
     beds: 3,
     baths: 2,
     parking: 2,
@@ -580,7 +580,7 @@ const properties = [
 
   <p>Ideal para quienes buscan <strong>confort, seguridad y una ubicación privilegiada</strong> en Santiago. ¡Listo para mudarte y disfrutarlo desde el primer día! 🏠✨</p>
   `,
-    size: "—",
+    size: "",
     beds: 3,
     baths: 2,
     parking: 2,
@@ -771,7 +771,7 @@ const properties = [
 
   <p>Un espacio ideal para quienes buscan <strong>comodidad, seguridad y un ambiente familiar</strong> en una de las zonas más exclusivas de Santiago. ¡Tu nuevo hogar te espera en Torre Real VIII – Los Álamos! 🏡💫</p>
   `,
-    size: "—",
+    size: "",
     beds: 3,
     baths: 2,
     parking: 2,
