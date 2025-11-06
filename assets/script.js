@@ -104,29 +104,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // ===== CREATE PROPERTY CARD =====
-  function createPropertyCard(property) {
-    const card = document.createElement("div");
-    card.className = "property-card";
-    card.innerHTML = `
-      <a href="property.html?prop=${property.id}" class="property-link">
-        <img src="${property.mainImage}" alt="${property.title}" class="property-image">
-        <div class="property-content">
-          <span class="property-location">${property.location}</span>
-          <h3 class="property-title">${property.title}</h3>
-          <span class="property-price">${property.price}</span>
-          <div class="property-details">
-            <span><i data-lucide="bed"></i> ${property.beds}</span>
-            <span><i data-lucide="bath"></i> ${property.baths}</span>
-            <span><i data-lucide="car"></i> ${property.parking}</span>
-            <span><i data-lucide="ruler"></i> ${property.size}</span>
-          </div>
+// ===== CREATE PROPERTY CARD =====
+function createPropertyCard(property) {
+  const card = document.createElement("div");
+  card.className = "property-card";
+  card.innerHTML = `
+    <a href="property.html?prop=${property.id}" class="property-link">
+      <img src="${property.mainImage}" alt="${property.title}" class="property-image">
+      <div class="property-content">
+        <span class="property-location">${property.location}</span>
+        <h3 class="property-title">${property.title}</h3>
+        <span class="property-price">${property.price}</span>
+        <div class="property-details">
+          <span><i data-lucide="bed"></i> ${property.beds}</span>
+          <span><i data-lucide="bath"></i> ${property.baths}</span>
+          ${property.parking ? `<span><i data-lucide="car"></i> ${property.parking}</span>` : ''}
+          ${property.size && property.size !== "-" && property.size !== "" ? `<span><i data-lucide="ruler"></i> ${property.size}</span>` : ''}
         </div>
-      </a>
-    `;
-    return card;
-  }
-
+      </div>
+    </a>
+  `;
+  return card;
+}
   // ===== RENDER PROPERTIES =====
   function renderProperties(properties) {
     const loader = document.getElementById("loader");
