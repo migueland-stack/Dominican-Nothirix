@@ -1181,7 +1181,7 @@ textarea::placeholder {
 
   /* Hero section */
   .hero {
-    height: 100vh;
+    height: 80vh;
     text-align: center;
   }
 
