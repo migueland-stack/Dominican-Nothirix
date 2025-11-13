@@ -49,8 +49,11 @@ img {
 body {
   margin: 0;
   font-family: "Nunito Sans", sans-serif;
+  overflow-x: hidden;
+  padding-top: 60px; /* Add padding for fixed navbar */
 }
 
+/* ===== FIXED NAVBAR STYLES ===== */
 .navbar {
   padding: 10px 40px;
   position: fixed;
@@ -64,6 +67,7 @@ body {
   height: 60px;
   z-index: 999;
   margin-bottom: 40px;
+  transform: none !important; /* Prevent transform conflicts */
 }
 
 /* Hamburger Icon hidden on desktop */
@@ -74,6 +78,7 @@ body {
   width: 30px;
   height: 22px;
   justify-content: space-between;
+  z-index: 1001; /* Ensure hamburger is above other elements */
 }
 
 .hamburger span {
@@ -104,12 +109,11 @@ body {
   font-weight: bold;
   opacity: 0.7;
   transition: opacity 0.3s ease;
-
 }
 
 .nav-links a:hover {
   opacity: 1;
-  color: var(--primary-yellow)
+  color: var(--primary-yellow);
 }
 
 .logo-container {
@@ -218,7 +222,7 @@ body {
 
 .hero {
   height: 100vh;
-  background-image: url('img/hero-background.png');
+  background-image: url("img/hero-background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -309,7 +313,7 @@ textarea::placeholder {
 }
 
 .form-btn::after {
-  content: '➤';
+  content: "➤";
   position: absolute;
   right: -30px;
   top: 50%;
@@ -328,7 +332,6 @@ textarea::placeholder {
   right: 15px;
   opacity: 1;
 }
-
 
 .privacy-note {
   font-size: 11px;
@@ -351,7 +354,6 @@ textarea::placeholder {
   width: 100%;
   height: auto;
 }
-
 
 .team-section {
   background-color: #f7f7f7;
@@ -449,13 +451,15 @@ textarea::placeholder {
   color: green;
 }
 
+/* ===== FIXED ADVANTAGES SECTION - NO SCROLLBAR ===== */
 .real-estate-section {
   max-width: 1260px;
   margin: 80px auto 120px auto;
   padding: 0 20px;
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: var(--dark-gray);
+  overflow: hidden; /* Prevent unwanted scrollbars */
 }
 
 .cards-container {
@@ -463,8 +467,10 @@ textarea::placeholder {
   justify-content: center;
   gap: 25px;
   flex-wrap: nowrap;
-  overflow-x: auto;
   margin-bottom: 40px;
+  position: relative;
+  overflow: visible;
+  width: 100%;
 }
 
 .card {
@@ -473,9 +479,11 @@ textarea::placeholder {
   height: 200px;
   overflow: hidden;
   border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   flex: 0 0 auto;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .slide {
@@ -487,7 +495,7 @@ textarea::placeholder {
   background-size: cover;
   background-position: center;
   border-radius: 8px;
-  transition: transform 0.7s ease;
+  transition: transform 0.3s ease;
 }
 
 .slide.slide1 {
@@ -512,10 +520,9 @@ textarea::placeholder {
   flex-direction: column;
   justify-content: center;
   border-radius: 8px;
-  transition: transform 0.7s ease;
+  transition: transform 0.3s ease;
   text-align: center;
 }
-
 
 .card:hover .slide.slide2 {
   transform: translateY(0);
@@ -547,7 +554,7 @@ textarea::placeholder {
   margin: 0;
   letter-spacing: 1.2px;
   color: #004944;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-bottom: 30px;
 }
 
@@ -555,7 +562,7 @@ textarea::placeholder {
   font-size: 16px;
   margin-top: 4px;
   color: var(--mid-gray);
-  font-family: 'Segoe UI', sans-serif, sans-serif;
+  font-family: "Segoe UI", sans-serif, sans-serif;
 }
 
 .description {
@@ -564,7 +571,7 @@ textarea::placeholder {
   font-size: 16px;
   line-height: 1.6;
   color: var(--mid-gray);
-  font-family: 'Segoe UI', sans-serif, sans-serif;
+  font-family: "Segoe UI", sans-serif, sans-serif;
 }
 
 .no-properties-message {
@@ -580,13 +587,12 @@ textarea::placeholder {
   opacity: 0.8;
 }
 
-
 .site-footer {
   margin-top: 120px;
   background-color: #0f2f2d;
   color: var(--light-gray);
   padding: 60px 40px 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .footer-container {
@@ -667,7 +673,6 @@ textarea::placeholder {
   margin-top: 30px;
 }
 
-
 /*------------------All Properties CSS ---------------------*/
 
 .filter-section {
@@ -738,16 +743,6 @@ textarea::placeholder {
   font-weight: bold;
 }
 
-/*
-.modal-filtros-contenido select,
-.modal-filtros-contenido input[type="number"] {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid var(--light-gray-3);
-  border-radius: 4px;
-}
-*/
-
 .modal-filtros-contenido select,
 .modal-filtros-contenido input[type="tel"] {
   width: 100%;
@@ -798,7 +793,6 @@ textarea::placeholder {
   max-width: 500px;
   min-width: 450px;
   flex: 1 1 450px;
-
 }
 
 .property-link {
@@ -852,9 +846,6 @@ textarea::placeholder {
   flex-wrap: wrap;
 }
 
-
-
-
 /*------------------Individual Properties CSS ---------------------*/
 .prop-section img {
   max-height: 400px;
@@ -868,7 +859,6 @@ textarea::placeholder {
   margin: 2rem 0;
   position: relative;
 }
-
 
 @media (max-width: 600px) {
   .carousel-slide {
@@ -997,6 +987,139 @@ textarea::placeholder {
   color: #ccc;
 }
 
+/* ===== REVISED ANIMATIONS - SAFE FOR MOBILE ===== */
+
+/* Base animation class - only opacity for mobile */
+.fade-in-section {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+}
+
+/* Desktop-only transforms */
+@media (min-width: 769px) {
+  .fade-in-section {
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-in-section.is-visible {
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation for hero elements - Desktop only */
+@media (min-width: 769px) {
+  .hero.fade-in-section.is-visible .logo-container {
+    animation: fadeInUp 0.8s ease 0.2s both;
+  }
+
+  .hero.fade-in-section.is-visible h1 .inline-text:nth-child(1) {
+    animation: fadeInUp 0.8s ease 0.4s both;
+  }
+
+  .hero.fade-in-section.is-visible h1 .inline-text:nth-child(2) {
+    animation: fadeInUp 0.8s ease 0.6s both;
+  }
+
+  .hero.fade-in-section.is-visible h1 .heroSecondary {
+    animation: fadeInUp 0.8s ease 0.8s both;
+  }
+
+  .hero.fade-in-section.is-visible .btns {
+    animation: fadeInUp 0.8s ease 1s both;
+  }
+}
+
+/* Staggered animation for form elements - Desktop only */
+@media (min-width: 769px) {
+  .form-container.fade-in-section.is-visible .left h2 {
+    animation: fadeInLeft 0.8s ease 0.2s both;
+  }
+
+  .form-container.fade-in-section.is-visible .left p {
+    animation: fadeInLeft 0.8s ease 0.4s both;
+  }
+
+  .form-container.fade-in-section.is-visible .left img {
+    animation: fadeInLeft 0.8s ease 0.6s both;
+  }
+
+  .form-container.fade-in-section.is-visible .right form {
+    animation: fadeInRight 0.8s ease 0.4s both;
+  }
+}
+
+/* Staggered animation for advantages section - Desktop only */
+@media (min-width: 769px) {
+  .real-estate-section.fade-in-section.is-visible .text-block {
+    animation: fadeInUp 0.8s ease 0.2s both;
+  }
+
+  .real-estate-section.fade-in-section.is-visible
+    .cards-container
+    .card:nth-child(1) {
+    animation: fadeInUp 0.8s ease 0.4s both;
+  }
+
+  .real-estate-section.fade-in-section.is-visible
+    .cards-container
+    .card:nth-child(2) {
+    animation: fadeInUp 0.8s ease 0.6s both;
+  }
+
+  .real-estate-section.fade-in-section.is-visible
+    .cards-container
+    .card:nth-child(3) {
+    animation: fadeInUp 0.8s ease 0.8s both;
+  }
+
+  .real-estate-section.fade-in-section.is-visible .description {
+    animation: fadeInUp 0.8s ease 1s both;
+  }
+
+  .real-estate-section.fade-in-section.is-visible .property-btn {
+    animation: fadeInUp 0.8s ease 1.2s both;
+  }
+}
+
+/* Keyframe animations - Safe versions */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Reduced from 30px */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px); /* Reduced from 30px */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px); /* Reduced from 30px */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /*-------------Media Queries-----------*/
 
 /* ≤600px */
@@ -1014,22 +1137,24 @@ textarea::placeholder {
 
 /* ≤768px */
 @media (max-width: 768px) {
-
   .hamburger {
     display: flex;
   }
 
   .nav-links {
-    position: absolute;
+    position: fixed;
     top: 60px;
+    left: 0;
     right: 0;
     background-color: #0f2f2d;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     display: none;
     padding: 20px;
-    gap: 10px;
+    gap: 15px;
+    transform: none !important; /* Prevent transform issues */
+    z-index: 998;
   }
 
   .nav-links a {
@@ -1039,6 +1164,19 @@ textarea::placeholder {
 
   .nav-links.show {
     display: flex;
+  }
+
+  /* Reset transforms on mobile for critical elements */
+  body {
+    transform: none !important;
+    padding-top: 60px;
+  }
+
+  .hero,
+  .form-container,
+  .team-section,
+  .advantages {
+    transform: none !important;
   }
 
   /* Hero section */
@@ -1101,8 +1239,16 @@ textarea::placeholder {
     padding: 0 10px;
   }
 
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
   .card {
-    display: none;
+    width: 100%;
+    max-width: 300px;
+    display: block !important; /* Override previous display: none */
   }
 
   .team-title {
@@ -1155,7 +1301,6 @@ textarea::placeholder {
   }
 }
 
-
 /* ≤900px */
 @media (max-width: 900px) {
   .form-container {
@@ -1181,11 +1326,9 @@ textarea::placeholder {
     max-width: 100%;
     padding: 0 10px;
   }
-
 }
 
 @media (max-width: 425px) {
-
   /* Real estate section */
   .real-estate-section .subtitle {
     font-size: 3rem;
@@ -1195,28 +1338,26 @@ textarea::placeholder {
     font-size: 3rem;
   }
 
-  @media (max-width: 425px) {
-    .property-card {
-      min-width: 280px;
-      flex: 1 1 280px;
-    }
+  .property-card {
+    min-width: 280px;
+    flex: 1 1 280px;
+  }
+}
+
+@media (max-width: 375px) {
+  .qwitcher-grypen-bold {
+    font-size: 70px;
   }
 
-  @media (max-width: 375px) {
-    .qwitcher-grypen-bold {
-      font-size: 70px;
-    }
+  .hero-main {
+    font-size: 40px;
+  }
 
-    .hero-main {
-      font-size: 40px;
-    }
+  .real-estate-section .subtitle {
+    font-size: 2.5rem;
+  }
 
-    .real-estate-section .subtitle {
-      font-size: 2.5rem;
-    }
-
-    .real-estate-section .title {
-      font-size: 2.5rem;
-    }
+  .real-estate-section .title {
+    font-size: 2.5rem;
   }
 }

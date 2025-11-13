@@ -258,4 +258,32 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // ===== SCROLL ANIMATIONS =====
+  const fadeSections = document.querySelectorAll(".fade-in-section");
+
+  // Function to check if element is in viewport
+  const isInViewport = (element) => {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <=
+        (window.innerHeight || document.documentElement.clientHeight) * 0.85 &&
+      rect.bottom >= 0
+    );
+  };
+
+  // Function to handle scroll animations
+  const handleScrollAnimations = () => {
+    fadeSections.forEach((section) => {
+      if (isInViewport(section)) {
+        section.classList.add("is-visible");
+      }
+    });
+  };
+
+  // Initial check on page load
+  handleScrollAnimations();
+
+  // Check on scroll
+  window.addEventListener("scroll", handleScrollAnimations);
 });
